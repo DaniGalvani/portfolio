@@ -3,10 +3,10 @@
   <rect width="324" height="82" fill="#141D2F"/>
   <g filter="url(#textShadow)">
     <text x="16" y="57" font-family="Poppins, Montserrat, Arial, sans-serif" font-size="58" font-weight="800" letter-spacing="0">
-      <tspan fill="#FFFFFF">Danie</tspan><tspan fill="#70E61C">l</tspan>
+      <tspan fill="#FFFFFF">Danıe</tspan><tspan fill="#70E61C">l</tspan>
     </text>
   </g>
-  <rect x="127" y="11" width="12" height="12" rx="1" fill="#9747FF"/>
+  <rect x="129.5" y="15.5" width="8" height="7" rx="1" fill="#9747FF"/>
   <defs>
     <filter id="textShadow" x="12" y="7" width="222" height="64" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
       <feDropShadow dx="0" dy="0" stdDeviation="0.2" flood-color="#FFFFFF" flood-opacity="0.18"/>
