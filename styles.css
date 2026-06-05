@@ -17,29 +17,26 @@ body {
     font-family: 'Poppins', sans-serif;
     min-height: 100vh;
     position: relative;
-    overflow: hidden;
 }
 
 .photo-shadows {
     position: absolute;
     top: 222px;
     left: 0;
-    width: 671px;
-    height: 690px;
-    object-fit: cover;
+    width: 750px;
+    height: auto;
     z-index: 0;
 }
 
-.hero-curve {
+.hero-vector {
     position: absolute;
-    left: -8%;
-    bottom: -300px;
-    width: 125%;
-    height: 520px;
-    background-color: #1B2740;
-    border-radius: 50% 50% 0 0;
-    transform: rotate(-3deg);
+    top: 280px;
+    right: 0;
+    width: 100vw;
+    min-width: 1440px;
+    height: auto;
     z-index: 3;
+    pointer-events: none;
 }
 
 header {
@@ -107,9 +104,16 @@ header {
     font-size: 18px;
 }
 
+.language-btn button:hover {
+    background-color: #9946ff;
+    color: white;
+    font-weight: bold;
+    border-color: #9946ff;
+}
+
 .profile-img img {
     position: relative;
-    z-index: 2;
+    z-index: 3;
     width: auto;
     height: 650px;
     object-fit: cover;
