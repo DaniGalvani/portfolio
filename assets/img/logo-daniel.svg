@@ -6,7 +6,7 @@
       <tspan fill="#FFFFFF">Danıe</tspan><tspan fill="#70E61C">l</tspan>
     </text>
   </g>
-  <rect x="129.5" y="15.5" width="8" height="7" rx="1" fill="#9747FF"/>
+  <rect x="143.2" y="13" width="10" height="9" rx="1" fill="#9747FF"/>
   <defs>
     <filter id="textShadow" x="12" y="7" width="222" height="64" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
       <feDropShadow dx="0" dy="0" stdDeviation="0.2" flood-color="#FFFFFF" flood-opacity="0.18"/>
