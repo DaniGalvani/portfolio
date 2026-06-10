@@ -72,9 +72,8 @@ header {
 
 .language-btn button {
     background-color: transparent;
-    border: 1px solid #FFFFFF;
+    border: 1px solid #70E61C;
     border-radius: 10px;
-    border-color: #70E61C;
     color: #FFFFFF;
     cursor: pointer;
     width: 38px;
@@ -82,6 +81,13 @@ header {
     padding: 5px;
     text-align: center;
     font-size: 18px;
+}
+
+.language-btn button.active {
+    background-color: #9946ff;
+    color: #FFFFFF;
+    font-weight: bold;
+    border-color: #9946ff;
 }
 
 .language-btn button:hover {
