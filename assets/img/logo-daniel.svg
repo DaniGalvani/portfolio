@@ -1,15 +1,28 @@
-<svg width="324" height="82" viewBox="0 0 324 82" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="logoTitle">
-  <title id="logoTitle">Daniel Logo</title>
-  <rect width="324" height="82" fill="#141D2F"/>
-  <g filter="url(#textShadow)">
-    <text x="16" y="57" font-family="Poppins, Montserrat, Arial, sans-serif" font-size="58" font-weight="800" letter-spacing="0">
-      <tspan fill="#FFFFFF">Danıe</tspan><tspan fill="#70E61C">l</tspan>
-    </text>
-  </g>
-  <rect x="143.2" y="13" width="10" height="9" rx="1" fill="#9747FF"/>
-  <defs>
-    <filter id="textShadow" x="12" y="7" width="222" height="64" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-      <feDropShadow dx="0" dy="0" stdDeviation="0.2" flood-color="#FFFFFF" flood-opacity="0.18"/>
-    </filter>
-  </defs>
+<svg width="150" height="36" viewBox="0 0 150 36" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Daniel">
+  <text
+    x="0"
+    y="27"
+    fill="white"
+    font-family="Arial, Helvetica, sans-serif"
+    font-size="31"
+    font-weight="800"
+  >Dan</text>
+  <rect x="59" y="10" width="5" height="17" rx="2.5" fill="white"/>
+  <circle cx="61.5" cy="5" r="3.5" fill="#9946ff"/>
+  <text
+    x="66"
+    y="27"
+    fill="white"
+    font-family="Arial, Helvetica, sans-serif"
+    font-size="31"
+    font-weight="800"
+  >e</text>
+  <text
+    x="83"
+    y="27"
+    fill="#70E61C"
+    font-family="Arial, Helvetica, sans-serif"
+    font-size="31"
+    font-weight="800"
+  >l</text>
 </svg>
