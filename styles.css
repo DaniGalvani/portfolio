@@ -138,9 +138,9 @@ header {
     z-index: 2;
 }
 
-.hero-vector {
+.hero-background {
     position: absolute;
-    top: 330px;
+    top: 190px;
     left: 0;
     width: 100vw;
     min-width: 1440px;
