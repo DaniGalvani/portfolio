@@ -156,7 +156,7 @@ header {
     display: flex;
     align-items: flex-start;
     top: 297px;
-    right: 100px;
+    left: 720px;
     z-index: 4;
 }
 
