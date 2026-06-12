@@ -15,6 +15,7 @@ body {
     color: #FFFFFF;
     font-family: 'Poppins', sans-serif;
     min-height: 100vh;
+    min-width: 1440px;
     max-width: 1440px;
     overflow-x: hidden;
 }
@@ -155,7 +156,7 @@ header {
     display: flex;
     align-items: flex-start;
     top: 297px;
-    left: 720px;
+    right: 100px;
     z-index: 4;
 }
 
