@@ -34,20 +34,17 @@ header {
 
 .logo {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    position: fixed;
-    top: 35px;
-    left: clamp(24px, 6.94vw, 100px);
-    width: 180px;
+    justify-content: flex-start;
     margin-left: 0;
     z-index: 11;
 }
 
-.logo img {
-    display: block;
-    width: 180px;
-    height: auto;
+.logo a img {
+    display: flex;
+    width: auto;
+    height: 28px;
+    margin-left: 100px;
 }
 
 .navbar {
@@ -140,7 +137,7 @@ header {
 
 .hero-background {
     position: absolute;
-    top: 190px;
+    top: 220px;
     left: 0;
     width: 100vw;
     min-width: 1440px;
@@ -155,7 +152,8 @@ header {
     display: flex;
     align-items: flex-start;
     top: 297px;
-    left: 720px;
+    left: 600px;
+    margin-right: 96px;
     z-index: 4;
 }
 
