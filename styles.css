@@ -125,6 +125,14 @@ header {
 
 .hero {
     position: relative;
+    width: 100vw;
+}
+
+.hero-section {
+    position: relative;
+    width: 100vw;
+    min-width: 1442px;
+    height: 900px;
 }
 
 .profile-image {
@@ -141,9 +149,9 @@ header {
     top: 220px;
     left: 0;
     width: 100vw;
-    min-width: 1440px;
+    min-width: 1442px;
     max-width: none;
-    height: auto;
+    height: 1400px;
     z-index: 3;
     pointer-events: none;
 }
