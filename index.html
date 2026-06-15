@@ -18,9 +18,11 @@
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#portfolio">Portfolio</a></li>
             </ul>
-            <div class="language-btn">
-                <button id="btn-de">DE</button>
-                <button id="btn-en" class="active">EN</button>
+            <div class="language-btn" aria-label="Language selection">
+                <input type="radio" id="btn-de" name="language" value="DE">
+                <label for="btn-de">DE</label>
+                <input type="radio" id="btn-en" name="language" value="EN" checked>
+                <label for="btn-en">EN</label>
             </div>
         </nav>
     </header>
@@ -30,13 +32,18 @@
             <img class="photo-shadows" src="./assets/img/Photo shadows.png" alt="Background Image">
             <img class="hero-background" src="./assets/img/hero-background.png" alt="Hero Background Image">
         </div>
-        <div class="hero-text">
-            <div class="greeting-wrapper">
-                <p class="greeting">I am</p>
-            </div>
-            <div class="name-title">
-                <p class="name">Daniel Felizetti</p>
-                <p class="title">Frontend Developer</p>
+        <div class="hero-content">
+            <div class="hero-text">
+                <div class="headline-row">
+                    <div class="greeting-wrapper">
+                        <p class="greeting">I am</p>
+                    </div>
+                    <div class="name-title">
+                        <p class="name">Daniel Felizetti</p>
+                        <p class="title">Frontend Developer</p>
+                    </div>
+                </div>
+                <a class="contact-btn" href="#contact">Let's Talk!</a>
             </div>
         </div>
     </section>
