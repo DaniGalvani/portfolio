@@ -15,8 +15,6 @@ body {
     color: #FFFFFF;
     font-family: 'Poppins', sans-serif;
     min-height: 100vh;
-    min-width: 1440px;
-    max-width: 1440px;
     overflow-x: hidden;
 }
 
@@ -142,7 +140,6 @@ header {
 .hero-section {
     position: relative;
     width: 100vw;
-    min-width: 1442px;
     height: 900px;
 }
 
@@ -151,16 +148,16 @@ header {
     top: 106px;
     left: 47px;
     width: auto;
-    height: 705px;
+    height: 650px;
     z-index: 2;
 }
 
 .hero-background {
     position: absolute;
-    top: 220px;
+    top: 170px;
     left: 0;
     width: 100vw;
-    min-width: 1442px;
+    min-width: 1440px;
     max-width: none;
     height: 1400px;
     z-index: 3;
@@ -171,13 +168,13 @@ header {
     position: absolute;
     top: 0;
     left: 0;
-    width: 1440px;
+    right: 0;
+    width: auto;
     height: 646px;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
     justify-content: center;
-    padding-right: 92px;
     z-index: 4;
 }
 
