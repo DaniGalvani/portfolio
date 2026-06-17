@@ -165,8 +165,9 @@ header {
 }
 
 .hero-content {
-    margin-top: 297px;
-    width: 1344px;
+    position: absolute;
+    top: 297px;
+    width: 1440px;
     height: 646px;
     display: flex;
     flex-direction: column;
@@ -240,7 +241,19 @@ header {
 }
 
 .hero-section .social-media {
+    position: absolute;
+    top: 900px;
+    left: 42px;
+    width: 200px;
+    height: 30px;
+    gap: 20px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+    z-index: 4;
+}
+
+.hero-section .social-media a {
+    width: 30px;
+    height: 30px;
 }
