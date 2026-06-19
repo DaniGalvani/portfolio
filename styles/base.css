@@ -1,0 +1,33 @@
+@font-face {
+    font-family: 'Poppins';
+    src: url('../fonts/Poppins-Regular.ttf') format('truetype');
+}
+
+:root {
+    --primary-color: #70E61C;
+    --secondary-color: #9747FF;
+    --background-color: #141D2F;
+    --text-color: #FFFFFF;
+    --aboutMe-shadow-width: clamp(360px, 56.56vw, 800px);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.section-title {
+    font-size: clamp(24px, 6.25vw, 90px);
+    font-weight: 700;
+    color: var(--text-color);
+}
