@@ -1,130 +1,238 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio</title>
-    <link rel="stylesheet" href="./styles/base.css">
-    <link rel="stylesheet" href="./styles/header.css">
-    <link rel="stylesheet" href="./styles/hero.css">
-    <link rel="stylesheet" href="./styles/about.css">
-    <link rel="stylesheet" href="./styles/skills.css">
+    <link rel="stylesheet" href="./styles/base.css" />
+    <link rel="stylesheet" href="./styles/header.css" />
+    <link rel="stylesheet" href="./styles/hero.css" />
+    <link rel="stylesheet" href="./styles/about.css" />
+    <link rel="stylesheet" href="./styles/skills.css" />
     <script src="./script.js" defer></script>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <div class="logo">
-            <a href="#top"><img src="./assets/img/logo-daniel.svg" alt="Daniel Logo"></a>
+      <div class="logo">
+        <a href="#top"
+          ><img src="./assets/img/logo-daniel.svg" alt="Daniel Logo"
+        /></a>
+      </div>
+      <nav class="navbar">
+        <ul>
+          <li><a href="#aboutMe">About me</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+        </ul>
+        <div class="language-btn" aria-label="Language selection">
+          <input type="radio" id="btn-de" name="language" value="DE" />
+          <label for="btn-de">DE</label>
+          <input type="radio" id="btn-en" name="language" value="EN" checked />
+          <label for="btn-en">EN</label>
         </div>
-        <nav class="navbar">
-            <ul>
-                <li><a href="#aboutMe">About me</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-            </ul>
-            <div class="language-btn" aria-label="Language selection">
-                <input type="radio" id="btn-de" name="language" value="DE">
-                <label for="btn-de">DE</label>
-                <input type="radio" id="btn-en" name="language" value="EN" checked>
-                <label for="btn-en">EN</label>
-            </div>
-        </nav>
+      </nav>
     </header>
     <section class="hero-section">
-        <div class="hero">
-            <img class="profile-image" src="./assets/img/profile_img.png" alt="Profile Image">
-            <img class="photo-shadows" src="./assets/img/Photo shadows.png" alt="Background Image">
-            <img class="hero-background" src="./assets/img/hero-background.png" alt="Hero Background Image">
-        </div>
-        <div class="hero-content">
-            <div class="hero-text">
-                <div class="headline-row">
-                    <div class="greeting-wrapper">
-                        <p class="greeting">I am</p>
-                    </div>
-                    <div class="name-title">
-                        <p class="name">Daniel Felizetti</p>
-                        <p class="title">Frontend Developer</p>
-                    </div>
-                </div>
-                <a class="contact-btn" href="#contact">Let's Talk!</a>
+      <div class="hero">
+        <img
+          class="profile-image"
+          src="./assets/img/profile_img.png"
+          alt="Profile Image"
+        />
+        <img
+          class="photo-shadows"
+          src="./assets/img/Photo shadows.png"
+          alt="Background Image"
+        />
+        <img
+          class="hero-background"
+          src="./assets/img/hero-background.png"
+          alt="Hero Background Image"
+        />
+      </div>
+      <div class="hero-content">
+        <div class="hero-text">
+          <div class="headline-row">
+            <div class="greeting-wrapper">
+              <p class="greeting">I am</p>
             </div>
-            <div class="scroll-indicator">
-            <a href="#about"><img src="./assets/img/scroll down.svg" alt="Scroll Indicator"></a>
+            <div class="name-title">
+              <p class="name">Daniel Felizetti</p>
+              <p class="title">Frontend Developer</p>
             </div>
+          </div>
+          <a class="contact-btn" href="#contact">Let's Talk!</a>
         </div>
-        <div class="social-media" aria-label="Social media links">
-            <img src="./assets/icons/line-purple.svg" alt="Line Icon">
-            <a href="https://github.com/danigalvani" target="_blank" aria-label="GitHub">
-                <img src="./assets/icons/git-default.svg" alt="GitHub Icon">
-            </a>
-            <a href="mailto:dfelizetti@gmx.de" aria-label="Mail">
-                <img src="./assets/icons/mail-default.svg" alt="Mail Icon">
-            </a>
-            <a href="https://www.linkedin.com/feed/" target="_blank" aria-label="LinkedIn">
-                <img src="./assets/icons/linkedin-default.svg" alt="LinkedIn Icon">
-            </a>
-            <p class="social-media-text">dfelizetti@gmx.de</p>  
+        <div class="scroll-indicator">
+          <a href="#about"
+            ><img src="./assets/img/scroll down.svg" alt="Scroll Indicator"
+          /></a>
         </div>
+      </div>
+      <div class="social-media" aria-label="Social media links">
+        <img src="./assets/icons/line-purple.svg" alt="Line Icon" />
+        <a
+          href="https://github.com/danigalvani"
+          target="_blank"
+          aria-label="GitHub"
+        >
+          <img src="./assets/icons/git-default.svg" alt="GitHub Icon" />
+        </a>
+        <a href="mailto:dfelizetti@gmx.de" aria-label="Mail">
+          <img src="./assets/icons/mail-default.svg" alt="Mail Icon" />
+        </a>
+        <a
+          href="https://www.linkedin.com/feed/"
+          target="_blank"
+          aria-label="LinkedIn"
+        >
+          <img src="./assets/icons/linkedin-default.svg" alt="LinkedIn Icon" />
+        </a>
+        <p class="social-media-text">dfelizetti@gmx.de</p>
+      </div>
     </section>
     <section id="aboutMe" class="aboutMe-section">
-        <img class="aboutMe-shadow" src="./assets/img/purple shadow about me.png" alt="About Me Shadow">
-        <div class="aboutMe-content">
-            <h2 class="section-title">About me</h2>
-            <p class="aboutMe-text">I am highly interested in IT because I am fascinated by technical processes and digital solutions. 
-                What excites me most about programming is the ability to solve complex tasks through logical thinking, structure, and creativity. 
-                I am motivated by turning my own ideas into functional applications and continuosly expanding my knowledge.</p>
-            <div class="location-text" aria-label="Location information">
-                <img class="location-icon" src="./assets/icons/location.svg" alt="Location Icon">
-                <p>I am based in Berlin, Germany, and I am open to different ways of working, including remote, hybrid, and on-site arrangements.
-                 I value flexibility and enjoy working in environments that encourage collaboration, personal responsibility, and modern working practices.</p>
-            </div>
-            <div class="bulb-text" aria-label="Motivation information">
-                <img class="bulb-icon" src="./assets/icons/bulb.svg" alt="Bulb Icon">
-                <p>I am passionate about technology, and programming especially interests me because it allows me to turn creative ideas into practical solutions.
-                I enjoy learning new technologies and continuously expanding my knowledge. Through personal projects and ongoing learning, I am constantly improving my technical skills and staying up to date with industry developments.</p>
-            </div>
-            <div class="puzzle-text" aria-label="Problem-solving information">
-                <img class="puzzle-icon" src="./assets/icons/puzzle.svg" alt="Puzzle Icon">
-                <p>I approach challenges in a structured and analytical way. By breaking complex problems down into smaller, manageable steps, I can identify efficient and sustainable solutions. I view every challenge as an opportunity to learn and grow.
-                 Analytical thinking, creativity, persistence, and teamwork are key strengths that help me successfully overcome obstacles and achieve positive results.</p>
-            </div>
-            <div class="aboutMe-profile-frame">
-                <img class="aboutMe-profile-img" src="./assets/img/aboutMe-profile.png" alt="About Me Profile Image">
-            </div>
-            <div class="profile-img">
-                <img class="eclipse" src="./assets/img/eclipse.svg" alt="Eclipse Image">
-                <img class="line-green" src="./assets/icons/line-green.svg" alt="Line Green Image">
-            </div>
+      <img
+        class="aboutMe-shadow"
+        src="./assets/img/purple shadow about me.png"
+        alt="About Me Shadow"
+      />
+      <div class="aboutMe-content">
+        <h2 class="section-title">About me</h2>
+        <p class="aboutMe-text">
+          I am highly interested in IT because I am fascinated by technical
+          processes and digital solutions. What excites me most about
+          programming is the ability to solve complex tasks through logical
+          thinking, structure, and creativity. I am motivated by turning my own
+          ideas into functional applications and continuosly expanding my
+          knowledge.
+        </p>
+        <div class="location-text" aria-label="Location information">
+          <img
+            class="location-icon"
+            src="./assets/icons/location.svg"
+            alt="Location Icon"
+          />
+          <p>
+            I am based in Berlin, Germany, and I am open to different ways of
+            working, including remote, hybrid, and on-site arrangements. I value
+            flexibility and enjoy working in environments that encourage
+            collaboration, personal responsibility, and modern working
+            practices.
+          </p>
         </div>
+        <div class="bulb-text" aria-label="Motivation information">
+          <img
+            class="bulb-icon"
+            src="./assets/icons/bulb.svg"
+            alt="Bulb Icon"
+          />
+          <p>
+            I am passionate about technology, and programming especially
+            interests me because it allows me to turn creative ideas into
+            practical solutions. I enjoy learning new technologies and
+            continuously expanding my knowledge. Through personal projects and
+            ongoing learning, I am constantly improving my technical skills and
+            staying up to date with industry developments.
+          </p>
+        </div>
+        <div class="puzzle-text" aria-label="Problem-solving information">
+          <img
+            class="puzzle-icon"
+            src="./assets/icons/puzzle.svg"
+            alt="Puzzle Icon"
+          />
+          <p>
+            I approach challenges in a structured and analytical way. By
+            breaking complex problems down into smaller, manageable steps, I can
+            identify efficient and sustainable solutions. I view every challenge
+            as an opportunity to learn and grow. Analytical thinking,
+            creativity, persistence, and teamwork are key strengths that help me
+            successfully overcome obstacles and achieve positive results.
+          </p>
+        </div>
+        <div class="aboutMe-profile-frame">
+          <img
+            class="aboutMe-profile-img"
+            src="./assets/img/aboutMe-profile.png"
+            alt="About Me Profile Image"
+          />
+        </div>
+        <div class="profile-img">
+          <img
+            class="eclipse"
+            src="./assets/img/eclipse.svg"
+            alt="Eclipse Image"
+          />
+          <img
+            class="line-green"
+            src="./assets/icons/line-green.svg"
+            alt="Line Green Image"
+          />
+        </div>
+      </div>
     </section>
     <section id="skills" class="skills-section">
-        <div class="skills-layout">
-            <div class="skills-grid" aria-label="Technical skills">
-                <div class="skill-item"><img src="./assets/img/Frame 10.png" alt="HTML"></div>
-                <div class="skill-item"><img src="./assets/img/Frame 11.png" alt="CSS"></div>
-                <div class="skill-item"><img src="./assets/img/Frame 6.png" alt="JavaScript"></div>
-                <div class="skill-item"><img src="./assets/img/Frame 12.png" alt="TypeScript"></div>
-                <div class="skill-item"><img src="./assets/icons/angular.svg" alt="Angular"></div>
-                <div class="skill-item"><img src="./assets/img/Frame 7.png" alt="Supabase"></div>
-                <div class="skill-item"><img src="./assets/img/Frame 9.png" alt="Git"></div>
-                <div class="skill-item"><img src="./assets/img/Frame 13.png" alt="REST API"></div>
-                <div class="skill-item"><img src="./assets/img/Frame 8.png" alt="Scrum"></div>
-                <div class="skill-item"><img src="./assets/img/Frame 18.png" alt="Material Design"></div>
-                <div class="skill-item skill-item--learning">
-                    <img src="./assets/img/16. Interest.png" alt="Continually learning">
-                </div>
-            </div>
-            <div class="skills-copy">
-                <div class="skills-heading">
-                    <h2 class="section-title">My skills</h2>
-                </div>
-                <p class="skills-intro">Show that you have used a variety of front-end<br class="desktop-break"> technologies in your projects.</p>
-                <h3>Looking for <span>another skill</span>?</h3>
-                <p class="skills-learning-text">Reveal enthusiasm for learning new technologies<br class="desktop-break"> and frameworks.</p>
-                <a class="skills-contact-btn" href="#contact">Get in touch</a>
-            </div>
+      <div class="skills-glow" aria-hidden="true"></div>
+      <div class="skills-layout">
+        <div class="skills-grid" aria-label="Technical skills">
+          <div class="skill-item">
+            <img src="./assets/img/Frame 10.png" alt="HTML" />
+          </div>
+          <div class="skill-item">
+            <img src="./assets/img/Frame 11.png" alt="CSS" />
+          </div>
+          <div class="skill-item">
+            <img src="./assets/img/Frame 6.png" alt="JavaScript" />
+          </div>
+          <div class="skill-item">
+            <img src="./assets/img/Frame 12.png" alt="TypeScript" />
+          </div>
+          <div class="skill-item">
+            <img src="./assets/icons/angular.svg" alt="Angular" />
+          </div>
+          <div class="skill-item">
+            <img src="./assets/img/Frame 7.png" alt="Supabase" />
+          </div>
+          <div class="skill-item">
+            <img src="./assets/img/Frame 9.png" alt="Git" />
+          </div>
+          <div class="skill-item">
+            <img src="./assets/img/Frame 13.png" alt="REST API" />
+          </div>
+          <div class="skill-item">
+            <img src="./assets/img/Frame 8.png" alt="Scrum" />
+          </div>
+          <div class="skill-item">
+            <img src="./assets/img/Frame 18.png" alt="Material Design" />
+          </div>
+          <div class="skill-item skill-item--learning">
+            <img
+              src="./assets/img/16. Interest.png"
+              alt="Continually learning"
+            />
+          </div>
         </div>
+        <div class="skills-copy">
+          <div class="skills-heading">
+            <h2 class="section-title">My skills</h2>
+          </div>
+          <p class="skills-intro">
+            Show that you have used a variety of front-end<br
+              class="desktop-break"
+            />
+            technologies in your projects.
+          </p>
+          <h3>Looking for <span>another skill</span>?</h3>
+          <p class="skills-learning-text">
+            Reveal enthusiasm for learning new technologies<br
+              class="desktop-break"
+            />
+            and frameworks.
+          </p>
+          <a class="skills-contact-btn" href="#contact">Get in touch</a>
+        </div>
+      </div>
     </section>
-</body>
+  </body>
 </html>
