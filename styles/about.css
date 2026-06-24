@@ -58,9 +58,9 @@
 
 .aboutMe-profile-frame {
     position: absolute;
-    top: clamp(96px, 10.42vw, 150px);
-    right: clamp(40px, 16vw, 260px);
-    width: clamp(360px, 34.72vw, 500px);
+    top: var(--profile-top);
+    right: var(--profile-right);
+    width: var(--profile-size);
     aspect-ratio: 1;
     border-radius: 50%;
     overflow: hidden;
@@ -79,9 +79,18 @@
 
 .eclipse {
     position: absolute;
-    top: clamp(96px, 10.42vw, 150px);
-    right: clamp(40px, 16vw, 260px);
-    width: clamp(360px, 34.72vw, 500px);
+    top: var(--profile-top);
+    right: var(--profile-right);
+    width: var(--profile-size);
     height: auto;
     z-index: 3;
+}
+
+.line-green {
+    position: absolute;
+    top: calc(var(--profile-top) + var(--profile-radius) - 2px);
+    right: 0;
+    width: var(--profile-right);
+    height: 4px;
+    z-index: 4;
 }
