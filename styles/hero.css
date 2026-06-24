@@ -106,26 +106,45 @@
 }
 
 .contact-btn {
+    position: relative;
+    isolation: isolate;
     width: clamp(132px, 11.5vw, 165px);
     height: clamp(48px, 4vw, 58px);
     margin-top: clamp(28px, 3vw, 44px);
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--primary-color);
+    background-color: transparent;
     color: var(--text-color);
     text-decoration: none;
     border: none;
-    border-radius: 8px;
     cursor: pointer;
     font-weight: 400;
     font-size: clamp(18px, 1.6vw, 23px);
-    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
 }
 
-.contact-btn:hover {
+.contact-btn::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background-color: var(--primary-color);
+    border-radius: 8px;
+    transform-origin: top center;
+    transition: background-color 160ms ease, transform 160ms ease;
+}
+
+.contact-btn:hover::before {
     background-color: var(--secondary-color);
-    transform: scale(1.08);
+    transform: scale(1.14);
+}
+
+.contact-btn span {
+    transition: transform 160ms ease;
+}
+
+.contact-btn:hover span {
+    transform: translateY(4px);
 }
 
 .hero-section .social-media {
