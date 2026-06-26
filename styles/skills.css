@@ -1,14 +1,14 @@
 .skills-section {
     position: relative;
     width: 100%;
-    min-height: 646px;
+    min-height: 780px;
     overflow: hidden;
 }
 
 .skills-layout {
     position: relative;
     width: 100%;
-    min-height: 646px;
+    min-height: 780px;
     display: grid;
     grid-template-columns: minmax(650px, 56%) minmax(500px, 44%);
     z-index: 2;
@@ -18,7 +18,7 @@
     align-self: start;
     display: grid;
     grid-template-columns: repeat(4, 96px);
-    grid-auto-rows: 104px;
+    grid-auto-rows: auto;
     justify-content: space-between;
     row-gap: 55px;
     column-gap: 0;
@@ -26,27 +26,38 @@
 }
 
 .skill-item {
-    width: 96px;
-    height: 104px;
+    width: 101px;
     display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    transition: transform 160ms ease;
-}
-
-.skill-item:hover {
-    transform: translateY(-8px);
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
 }
 
 .skill-item img {
     display: block;
-    max-width: 96px;
-    max-height: 121px;
+    max-width: 60px;
+    max-height: 60px;
     object-fit: contain;
+    transition: transform 160ms ease;
+}
+
+.skill-item:hover img {
+    transform: translateY(-8px);
+}
+
+.skill-item p {
+    margin-top: 8px;
+    font-size: 16px;
+    text-align: center;
+    line-height: 1.2;
 }
 
 .skill-item--learning img {
     width: 96px;
+}
+
+.skill-item--learning p {
+   color: var(--secondary-color);
 }
 
 .skills-copy {
@@ -159,6 +170,16 @@
     outline-offset: 4px;
 }
 
+.skills-background {
+    position: absolute;
+    left: 0;
+    top: 150px;
+    width: auto;
+    height: auto;
+    z-index: 1;
+    pointer-events: none;
+}
+
 @media (max-width: 1200px) {
     .skills-layout {
         grid-template-columns: minmax(560px, 55%) minmax(440px, 45%);
@@ -257,6 +278,7 @@
 
     .skill-item {
         width: 88px;
+        font-size: 12px;
     }
 
 }

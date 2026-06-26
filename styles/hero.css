@@ -71,7 +71,7 @@
 
 .headline-row {
     display: flex;
-    align-items: flex-start;
+    align-items: stretch;
 }
 
 .hero-text .name {
@@ -91,18 +91,18 @@
 
 .hero-text .greeting-wrapper {
     width: clamp(20px, 4.9vw, 70px);
-    height: clamp(42px, 10.4vw, 150px);
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
 }
 
 .hero-text .greeting {
-    font-size: clamp(17px, 4.45vw, 64px);
+    font-size: clamp(17px, 4.2vw, 64px);
     font-weight: 400;
     white-space: nowrap;
     transform: rotate(-90deg);
-    margin-right: clamp(8px, 1.4vw, 20px);
+    margin-right: clamp(8px, 3vw, 30px);
 }
 
 .contact-btn {
