@@ -8,11 +8,17 @@
     --secondary-color: #9747FF;
     --background-color: #141D2F;
     --text-color: #FFFFFF;
+    --header-height: clamp(74px, 7.36vw, 106px);
+    --anchor-scroll-offset: calc(var(--header-height) + 24px);
     --aboutMe-shadow-width: clamp(360px, 56.56vw, 800px);
     --profile-top: clamp(96px, 10.42vw, 150px);
     --profile-right: clamp(40px, 16vw, 260px);
     --profile-size: clamp(360px, 34.72vw, 500px);
     --profile-radius: clamp(180px, 17.36vw, 250px);
+}
+
+html {
+    scroll-padding-top: var(--anchor-scroll-offset);
 }
 
 * {

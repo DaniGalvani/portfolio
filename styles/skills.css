@@ -39,6 +39,7 @@
     max-height: 60px;
     object-fit: contain;
     transition: transform 160ms ease;
+    cursor: pointer;
 }
 
 .skill-item:hover img {
