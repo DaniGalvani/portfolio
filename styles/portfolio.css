@@ -1,8 +1,11 @@
 .portfolio-section {
     position: relative;
     display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
     z-index: 9;
+}
+
+.portfolio-section .section-title {
+    padding: 0 32px;
 }

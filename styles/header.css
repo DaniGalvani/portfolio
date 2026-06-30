@@ -75,7 +75,7 @@ header {
     color: var(--text-color);
     cursor: pointer;
     font-size: clamp(15px, 1.25vw, 18px);
-    font-weight: 700;
+    font-weight: 400;
     line-height: 1;
     transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
 }
