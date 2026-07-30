@@ -11,7 +11,7 @@
 }
 
 .portfolio-section::before,
-.portfolio-section::after {
+.portfolio-project:last-child::before {
     content: "";
     position: absolute;
     pointer-events: none;
@@ -28,12 +28,14 @@
     background-image: url("../assets/img/Green shadow 2.png");
 }
 
-.portfolio-section::after {
-    top: clamp(470px, 51vw, 735px);
-    left: clamp(-330px, -23vw, -170px);
-    width: clamp(600px, 61vw, 880px);
-    height: clamp(600px, 61vw, 880px);
-    background-image: url("../assets/img/purple shadow about me.png");
+.portfolio-project:last-child::before {
+    top: -40px;
+    left: calc((100% - 100vw) / 2);
+    width: min(61vw, 880px);
+    height: auto;
+    aspect-ratio: 827 / 934;
+    transform: translateX(-25%);
+    background-image: url("../assets/img/Purple shadow portfolio.svg");
 }
 
 .portfolio-glow {
@@ -86,11 +88,16 @@
 }
 
 .portfolio-project {
+    position: relative;
     display: grid;
     grid-template-columns: minmax(360px, 520px) minmax(320px, 420px);
     align-items: center;
     justify-content: space-between;
     gap: clamp(42px, 7vw, 96px);
+}
+
+.portfolio-project:last-child {
+    isolation: isolate;
 }
 
 .portfolio-project--reverse {
@@ -153,27 +160,23 @@
 .portfolio-actions {
     display: flex;
     align-items: center;
-    gap: clamp(36px, 5vw, 64px);
+    gap: clamp(48px, 6vw, 86px);
     margin-top: 28px;
 }
 
 .portfolio-btn {
-    min-width: 118px;
-    min-height: 48px;
-    padding: 12px 22px;
+    min-width: 137px;
+    min-height: 58px;
+    padding: 15px 30px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     border-radius: 8px;
     color: var(--text-color);
-    font-size: 18px;
+    font-size: 23px;
     line-height: 1;
     text-decoration: none;
     transition: background-color 160ms ease, border-color 160ms ease, transform 160ms ease;
-}
-
-.portfolio-btn:hover {
-    transform: translateY(-2px);
 }
 
 .portfolio-btn--primary {
