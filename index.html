@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="./styles/about.css" />
     <link rel="stylesheet" href="./styles/skills.css" />
     <link rel="stylesheet" href="./styles/portfolio.css" />
+    <link rel="stylesheet" href="./styles/footer.css" />
     <script src="./script.js" defer></script>
   </head>
   <body>
@@ -21,9 +22,9 @@
       </div>
       <nav class="navbar">
         <ul>
-          <li><a href="#aboutMe">About me</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a class="nav-link" href="#aboutMe">About me</a></li>
+          <li><a class="nav-link" href="#skills">Skills</a></li>
+          <li><a class="nav-link" href="#portfolio">Portfolio</a></li>
         </ul>
         <div class="language-btn" aria-label="Language selection">
           <input type="radio" id="btn-de" name="language" value="DE" />
@@ -245,11 +246,10 @@
             </p>
             <div class="portfolio-actions">
               <a class="portfolio-btn portfolio-btn--primary" href="#">Live test</a>
-              <a class="portfolio-btn portfolio-btn--outline" href="#">Github</a>
+              <a class="portfolio-btn portfolio-btn--outline" href="https://github.com/DaniGalvani/join_portfolio" target="_blank">Github</a>
             </div>
           </div>
         </article>
-
         <article class="portfolio-project portfolio-project--reverse">
           <div class="portfolio-project-image">
             <img src="./assets/img/pokédex.png" alt="Project Pokédex" />
@@ -262,11 +262,10 @@
             </p>
             <div class="portfolio-actions">
               <a class="portfolio-btn portfolio-btn--primary" href="#">Live test</a>
-              <a class="portfolio-btn portfolio-btn--outline" href="#">Github</a>
+              <a class="portfolio-btn portfolio-btn--outline" href="https://github.com/DaniGalvani/Pokedex" target="_blank">Github</a>
             </div>
           </div>
         </article>
-
         <article class="portfolio-project">
           <div class="portfolio-project-image">
             <img src="./assets/img/pollo_loco.png" alt="Project Pollo Loco" />
@@ -279,11 +278,134 @@
             </p>
             <div class="portfolio-actions">
               <a class="portfolio-btn portfolio-btn--primary" href="#">Live test</a>
-              <a class="portfolio-btn portfolio-btn--outline" href="#">Github</a>
+              <a class="portfolio-btn portfolio-btn--outline" href="https://github.com/DaniGalvani/El_Pollo_Loco" target="_blank">Github</a>
             </div>
           </div>
         </article>
       </div>
+      <section
+        class="testimonial-slider"
+        aria-label="Testimonials"
+        aria-roledescription="carousel"
+        tabindex="0"
+      >
+        <div class="testimonial-stage" aria-live="polite">
+          <article class="testimonial-slide is-active" data-testimonial-slide>
+            <div class="testimonial-card">
+              <span class="testimonial-quote-mark" aria-hidden="true">“</span>
+              <blockquote>
+                <p>
+                  Michael really kept the team together with his great organization
+                  and clear communication. We wouldn't have got this far without
+                  his commitment.
+                </p>
+                <div class="testimonial-author">
+                  <span aria-hidden="true"></span>
+                  <cite>V. Schuster - Team Partner</cite>
+                </div>
+              </blockquote>
+            </div>
+            <div class="testimonial-portrait">
+              <img
+                src="./assets/img/testimonials/v-schuster.png"
+                alt="Portrait of V. Schuster"
+              />
+            </div>
+          </article>
+
+          <article class="testimonial-slide" data-testimonial-slide>
+            <div class="testimonial-card">
+              <span class="testimonial-quote-mark" aria-hidden="true">“</span>
+              <blockquote>
+                <p>
+                  Michi was a top team colleague at DA. His positive commitment
+                  and willingness to take on responsibility made a significant
+                  contribution to us achieving our goals.
+                </p>
+                <div class="testimonial-author">
+                  <span aria-hidden="true"></span>
+                  <cite>E. Eichinger - Team Partner</cite>
+                </div>
+              </blockquote>
+            </div>
+            <div class="testimonial-portrait">
+              <img
+                src="./assets/img/testimonials/e-eichinger.png"
+                alt="Portrait of E. Eichinger"
+              />
+            </div>
+          </article>
+
+          <article class="testimonial-slide" data-testimonial-slide>
+            <div class="testimonial-card">
+              <span class="testimonial-quote-mark" aria-hidden="true">“</span>
+              <blockquote>
+                <p>
+                  It was a great pleasure to work with Michael. He knows how to
+                  push and encourage team members to present the best work
+                  possible, always adding something to brainstorm. Regarding the
+                  well-being of group members, he was always present and available
+                  to listen and help others, with a great sense of humor as well.
+                </p>
+                <div class="testimonial-author">
+                  <span aria-hidden="true"></span>
+                  <cite>I. Nuber - Frontend Engineer</cite>
+                </div>
+              </blockquote>
+            </div>
+            <div class="testimonial-portrait">
+              <img
+                src="./assets/img/testimonials/i-nuber.png"
+                alt="Portrait of I. Nuber"
+              />
+            </div>
+          </article>
+        </div>
+
+        <div class="testimonial-controls" aria-label="Choose testimonial">
+          <button class="testimonial-arrow" type="button" data-testimonial-prev aria-label="Previous testimonial">
+            <img src="./assets/icons/arrow-left.svg" alt="" aria-hidden="true" />
+          </button>
+          <div class="testimonial-dots">
+            <button class="testimonial-dot is-active" type="button" data-testimonial-dot="0" aria-label="Show testimonial 1" aria-current="true"></button>
+            <button class="testimonial-dot" type="button" data-testimonial-dot="1" aria-label="Show testimonial 2"></button>
+            <button class="testimonial-dot" type="button" data-testimonial-dot="2" aria-label="Show testimonial 3"></button>
+          </div>
+          <button class="testimonial-arrow" type="button" data-testimonial-next aria-label="Next testimonial">
+            <img src="./assets/icons/arrow-right.svg" alt="" aria-hidden="true" />
+          </button>
+        </div>
+      </section>
     </section>
+    <footer>
+      <div class="logo-footer">
+        <a href="#top"
+          ><img src="./assets/img/logo-daniel.svg" alt="Daniel Logo"
+        /></a>
+        <a class="legal-text" href="#">Legal Notice</a>
+      </div>
+      <div class="copyright">
+        <p class="copyright-text">© Daniel Felizetti 2026</p>
+      </div>
+      <div class="social-media-links">
+        <a
+          href="https://github.com/danigalvani"
+          target="_blank"
+          aria-label="GitHub"
+        >
+          <img src="./assets/icons/git-default.svg" alt="GitHub Icon" />
+        </a>
+        <a href="mailto:dfelizetti@gmx.de" aria-label="Mail">
+          <img src="./assets/icons/mail-default.svg" alt="Mail Icon" />
+        </a>
+        <a
+          href="https://www.linkedin.com/feed/"
+          target="_blank"
+          aria-label="LinkedIn"
+        >
+          <img src="./assets/icons/linkedin-default.svg" alt="LinkedIn Icon" />
+        </a>
+      </div>
+    </footer>
   </body>
 </html>

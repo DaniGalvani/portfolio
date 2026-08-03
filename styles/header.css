@@ -40,15 +40,32 @@ header {
 }
 
 .navbar ul li a {
+    position: relative;
+    display: inline-block;
     color: var(--text-color);
     text-decoration: none;
     font-size: clamp(16px, 1.6vw, 23px);
     font-weight: 400;
+    transition: color 0.3s ease;
 }
 
 .navbar ul li a:hover {
     color: var(--primary-color);
-    transition: color 0.3s ease;
+}
+
+.navbar ul li a[aria-current="location"] {
+    color: var(--primary-color);
+}
+
+.navbar ul li a[aria-current="location"]::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 55px;
+    height: 3px;
+    border-radius: 4px;
+    background-color: var(--secondary-color);
 }
 
 .language-btn {
@@ -77,12 +94,14 @@ header {
     font-size: clamp(15px, 1.25vw, 18px);
     font-weight: 400;
     line-height: 1;
-    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+    transition: background-color 0.1s ease, border-color 0.1s ease, color 0.1s ease;
 }
 
 .language-btn input[type="radio"]:checked + label {
     background-color: var(--primary-color);
     color: var(--text-color);
+    cursor: default;
+    pointer-events: none;
 }
 
 .language-btn label:hover {
