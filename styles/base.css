@@ -22,10 +22,18 @@
     --header-height: clamp(74px, 7.36vw, 106px);
     --anchor-scroll-offset: calc(var(--header-height) + 24px);
     --aboutMe-shadow-width: clamp(360px, 56.56vw, 800px);
+    --about-content-padding: clamp(24px, 6.94vw, 100px);
+    --about-profile-gap: clamp(24px, 2.22vw, 32px);
     --profile-top: clamp(96px, 10.42vw, 150px);
     --profile-right: clamp(40px, 16vw, 260px);
-    --profile-size: clamp(360px, 34.72vw, 500px);
-    --profile-radius: clamp(180px, 17.36vw, 250px);
+    --profile-size: min(
+        453px,
+        31.46vw,
+        calc(
+            100vw - var(--about-content-padding) - 471px -
+            var(--about-profile-gap) - var(--profile-right)
+        )
+    );
 }
 
 html {

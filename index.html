@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio</title>
+    <title data-i18n="pageTitle">Portfolio</title>
     <link rel="stylesheet" href="./styles/base.css" />
     <link rel="stylesheet" href="./styles/header.css" />
     <link rel="stylesheet" href="./styles/hero.css" />
@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="./styles/skills.css" />
     <link rel="stylesheet" href="./styles/portfolio.css" />
     <link rel="stylesheet" href="./styles/footer.css" />
+    <script src="./language.js" defer></script>
     <script src="./script.js" defer></script>
   </head>
   <body>
@@ -23,11 +24,23 @@
         </div>
         <nav class="navbar">
           <ul>
-            <li><a class="nav-link" href="#aboutMe">About me</a></li>
-            <li><a class="nav-link" href="#skills">Skills</a></li>
+            <li>
+              <a class="nav-link" href="#aboutMe" data-i18n="navAbout"
+                >About me</a
+              >
+            </li>
+            <li>
+              <a class="nav-link" href="#skills" data-i18n="navSkills"
+                >Skills</a
+              >
+            </li>
             <li><a class="nav-link" href="#portfolio">Portfolio</a></li>
           </ul>
-          <div class="language-btn" aria-label="Language selection">
+          <div
+            class="language-btn"
+            aria-label="Language selection"
+            data-i18n-aria-label="languageSelection"
+          >
             <input type="radio" id="btn-de" name="language" value="DE" />
             <label for="btn-de">DE</label>
             <input
@@ -67,10 +80,12 @@
               </div>
               <div class="name-title">
                 <p class="name">Daniel Felizetti</p>
-                <p class="title">Frontend Developer</p>
+                <p class="title" data-i18n="heroTitle">Frontend Developer</p>
               </div>
             </div>
-            <a class="contact-btn" href="#contact"><span>Let's Talk!</span></a>
+            <a class="contact-btn" href="#contact"
+              ><span data-i18n="heroContact">Let's Talk!</span></a
+            >
           </div>
           <div class="scroll-indicator">
             <a href="#about"
@@ -110,44 +125,56 @@
           alt="About Me Shadow"
         />
         <div class="aboutMe-content">
-          <h2 class="section-title">About me</h2>
-          <p class="aboutMe-text">
+          <h2 class="section-title" data-i18n="aboutTitle">About me</h2>
+          <p class="aboutMe-text" data-i18n="aboutIntro">
             I am passionate about IT because I enjoy solving problems through
             logic and creativity. Programming motivates me to turn ideas into
             functional applications while continuously improving my skills.
           </p>
-          <div class="location-text" aria-label="Location information">
+          <div
+            class="location-text"
+            aria-label="Location information"
+            data-i18n-aria-label="locationInformation"
+          >
             <img
               class="location-icon"
               src="./assets/icons/location.svg"
               alt="Location Icon"
             />
-            <p>
+            <p data-i18n="aboutLocation">
               I am based in Berlin, Germany, and I am open to remote, hybrid, or
               on-site work. I value flexibility, collaboration, and personal
               responsibility.
             </p>
           </div>
-          <div class="bulb-text" aria-label="Motivation information">
+          <div
+            class="bulb-text"
+            aria-label="Motivation information"
+            data-i18n-aria-label="motivationInformation"
+          >
             <img
               class="bulb-icon"
               src="./assets/icons/bulb.svg"
               alt="Bulb Icon"
             />
-            <p>
+            <p data-i18n="aboutMotivation">
               I am passionate about technology and programming because it allows
               me to turn creative ideas into practical solutions. I enjoy
               learning new technologies and continuously improving my technical
               skills.
             </p>
           </div>
-          <div class="puzzle-text" aria-label="Problem-solving information">
+          <div
+            class="puzzle-text"
+            aria-label="Problem-solving information"
+            data-i18n-aria-label="problemSolvingInformation"
+          >
             <img
               class="puzzle-icon"
               src="./assets/icons/puzzle.svg"
               alt="Puzzle Icon"
             />
-            <p>
+            <p data-i18n="aboutProblemSolving">
               I approach challenges with a structured and analytical mindset. I
               enjoy solving complex problems, learning from challenges, and
               achieving effective solutions through persistence and teamwork.
@@ -166,11 +193,7 @@
               src="./assets/img/eclipse.svg"
               alt="Eclipse Image"
             />
-            <img
-              class="line-green"
-              src="./assets/icons/line-green.svg"
-              alt="Line Green Image"
-            />
+            <div class="line-green" aria-hidden="true"></div>
           </div>
         </div>
       </section>
@@ -183,7 +206,11 @@
           aria-hidden="true"
         />
         <div class="skills-layout">
-          <div class="skills-grid" aria-label="Technical skills">
+          <div
+            class="skills-grid"
+            aria-label="Technical skills"
+            data-i18n-aria-label="technicalSkills"
+          >
             <div class="skill-item">
               <img src="./assets/icons/html.svg" alt="HTML" />
               <p>HTML</p>
@@ -213,28 +240,30 @@
                 src="./assets/icons/interest.svg"
                 alt="Continually learning"
               />
-              <p>Continually learning</p>
+              <p data-i18n="continuallyLearning">Continually learning</p>
             </div>
           </div>
           <div class="skills-copy">
             <div class="skills-heading">
-              <h2 class="section-title">My skills</h2>
+              <h2 class="section-title" data-i18n="skillsTitle">My skills</h2>
             </div>
-            <p class="skills-intro">
+            <p class="skills-intro" data-i18n-html="skillsIntro">
               Show that you have used a variety of front-end<br
                 class="desktop-break"
               />
               technologies in your projects.
             </p>
-            <h3>Looking for <span>another skill</span>?</h3>
-            <p class="skills-learning-text">
+            <h3 data-i18n-html="skillsQuestion">
+              Looking for <span>another skill</span>?
+            </h3>
+            <p class="skills-learning-text" data-i18n-html="skillsLearning">
               Reveal enthusiasm for learning new technologies<br
                 class="desktop-break"
               />
               and frameworks.
             </p>
             <a class="skills-contact-btn" href="#contact"
-              ><span>Get in touch</span></a
+              ><span data-i18n="getInTouch">Get in touch</span></a
             >
           </div>
         </div>
@@ -255,7 +284,7 @@
             aria-hidden="true"
           />
         </div>
-        <p class="portfolio-intro">
+        <p class="portfolio-intro" data-i18n="portfolioIntro">
           Explore a selection of my work here - Interact with projects to see my
           skills in Action.
         </p>
@@ -267,14 +296,14 @@
             <div class="portfolio-project-copy">
               <h3>Join</h3>
               <p class="portfolio-tech">HTML | CSS | JavaScript | Firebase</p>
-              <p class="portfolio-description">
+              <p class="portfolio-description" data-i18n="joinDescription">
                 Task manager inspired by the Kanban System. Create and organize
                 tasks using drag and drop functions, assign users and
                 categories.
               </p>
               <div class="portfolio-actions">
                 <a class="portfolio-btn portfolio-btn--primary" href="#"
-                  >Live test</a
+                  ><span data-i18n="liveTest">Live test</span></a
                 >
                 <a
                   class="portfolio-btn portfolio-btn--outline"
@@ -292,13 +321,13 @@
             <div class="portfolio-project-copy">
               <h3>Pokédex</h3>
               <p class="portfolio-tech">JavaScript | HTML | CSS | API</p>
-              <p class="portfolio-description">
+              <p class="portfolio-description" data-i18n="pokedexDescription">
                 A small web application based on a public API. Browse, search
                 and inspect entries with a clean and responsive interface.
               </p>
               <div class="portfolio-actions">
                 <a class="portfolio-btn portfolio-btn--primary" href="#"
-                  >Live test</a
+                  ><span data-i18n="liveTest">Live test</span></a
                 >
                 <a
                   class="portfolio-btn portfolio-btn--outline"
@@ -316,14 +345,14 @@
             <div class="portfolio-project-copy">
               <h3>Pollo Loco</h3>
               <p class="portfolio-tech">HTML | CSS | JavaScript</p>
-              <p class="portfolio-description">
+              <p class="portfolio-description" data-i18n="polloDescription">
                 A symple Jump-and-Run game based on an object-oriented approach.
                 Help Pepe to find coins and bottles to fight the evil chicken
                 and save the world.
               </p>
               <div class="portfolio-actions">
                 <a class="portfolio-btn portfolio-btn--primary" href="#"
-                  >Live test</a
+                  ><span data-i18n="liveTest">Live test</span></a
                 >
                 <a
                   class="portfolio-btn portfolio-btn--outline"
@@ -338,22 +367,30 @@
         <section
           class="testimonial-slider"
           aria-label="Testimonials"
+          data-i18n-aria-label="testimonials"
           aria-roledescription="carousel"
           tabindex="0"
         >
           <div class="testimonial-stage" aria-live="polite">
             <article class="testimonial-slide is-active" data-testimonial-slide>
               <div class="testimonial-card">
-                <span class="testimonial-quote-mark" aria-hidden="true">“</span>
+                <img
+                  class="testimonial-quote-mark"
+                  src="./assets/icons/quotation-marks.svg"
+                  alt=""
+                  aria-hidden="true"
+                />
                 <blockquote>
-                  <p>
+                  <p data-i18n="testimonialSchuster">
                     Michael really kept the team together with his great
                     organization and clear communication. We wouldn't have got
                     this far without his commitment.
                   </p>
                   <div class="testimonial-author">
                     <span aria-hidden="true"></span>
-                    <cite>V. Schuster - Team Partner</cite>
+                    <cite data-i18n="teamPartnerSchuster"
+                      >V. Schuster - Team Partner</cite
+                    >
                   </div>
                 </blockquote>
               </div>
@@ -367,16 +404,23 @@
 
             <article class="testimonial-slide" data-testimonial-slide>
               <div class="testimonial-card">
-                <span class="testimonial-quote-mark" aria-hidden="true">“</span>
+                <img
+                  class="testimonial-quote-mark"
+                  src="./assets/icons/quotation-marks.svg"
+                  alt=""
+                  aria-hidden="true"
+                />
                 <blockquote>
-                  <p>
+                  <p data-i18n="testimonialEichinger">
                     Michi was a top team colleague at DA. His positive
                     commitment and willingness to take on responsibility made a
                     significant contribution to us achieving our goals.
                   </p>
                   <div class="testimonial-author">
                     <span aria-hidden="true"></span>
-                    <cite>E. Eichinger - Team Partner</cite>
+                    <cite data-i18n="teamPartnerEichinger"
+                      >E. Eichinger - Team Partner</cite
+                    >
                   </div>
                 </blockquote>
               </div>
@@ -390,9 +434,14 @@
 
             <article class="testimonial-slide" data-testimonial-slide>
               <div class="testimonial-card">
-                <span class="testimonial-quote-mark" aria-hidden="true">“</span>
+                <img
+                  class="testimonial-quote-mark"
+                  src="./assets/icons/quotation-marks.svg"
+                  alt=""
+                  aria-hidden="true"
+                />
                 <blockquote>
-                  <p>
+                  <p data-i18n="testimonialNuber">
                     It was a great pleasure to work with Michael. He knows how
                     to push and encourage team members to present the best work
                     possible, always adding something to brainstorm. Regarding
@@ -402,7 +451,9 @@
                   </p>
                   <div class="testimonial-author">
                     <span aria-hidden="true"></span>
-                    <cite>I. Nuber - Frontend Engineer</cite>
+                    <cite data-i18n="frontendEngineerNuber"
+                      >I. Nuber - Frontend Engineer</cite
+                    >
                   </div>
                 </blockquote>
               </div>
@@ -415,12 +466,17 @@
             </article>
           </div>
 
-          <div class="testimonial-controls" aria-label="Choose testimonial">
+          <div
+            class="testimonial-controls"
+            aria-label="Choose testimonial"
+            data-i18n-aria-label="chooseTestimonial"
+          >
             <button
               class="testimonial-arrow"
               type="button"
               data-testimonial-prev
               aria-label="Previous testimonial"
+              data-i18n-aria-label="previousTestimonial"
             >
               <img
                 src="./assets/icons/arrow-left.svg"
@@ -434,6 +490,7 @@
                 type="button"
                 data-testimonial-dot="0"
                 aria-label="Show testimonial 1"
+                data-i18n-aria-label="showTestimonial1"
                 aria-current="true"
               ></button>
               <button
@@ -441,12 +498,14 @@
                 type="button"
                 data-testimonial-dot="1"
                 aria-label="Show testimonial 2"
+                data-i18n-aria-label="showTestimonial2"
               ></button>
               <button
                 class="testimonial-dot"
                 type="button"
                 data-testimonial-dot="2"
                 aria-label="Show testimonial 3"
+                data-i18n-aria-label="showTestimonial3"
               ></button>
             </div>
             <button
@@ -454,6 +513,7 @@
               type="button"
               data-testimonial-next
               aria-label="Next testimonial"
+              data-i18n-aria-label="nextTestimonial"
             >
               <img
                 src="./assets/icons/arrow-right.svg"
@@ -469,7 +529,9 @@
           <a href="#top"
             ><img src="./assets/img/logo-daniel.svg" alt="Daniel Logo"
           /></a>
-          <a class="legal-text" href="#">Legal Notice</a>
+          <a class="legal-text" href="#" data-i18n="legalNotice"
+            >Legal Notice</a
+          >
         </div>
         <div class="copyright">
           <p class="copyright-text">© Daniel Felizetti 2026</p>

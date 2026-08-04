@@ -17,7 +17,7 @@
 .aboutMe-content {
     position: relative;
     width: 100%;
-    padding: clamp(24px, 6.94vw, 100px);
+    padding: var(--about-content-padding);
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -74,7 +74,7 @@
 
 .aboutMe-profile-img {
     position: absolute;
-    top: clamp(18px, 2.2vw, 32px);
+    top: 7.06%;
     left: 50%;
     width: 86%;
     height: auto;
@@ -82,20 +82,52 @@
     z-index: 1;
 }
 
-.eclipse {
+.profile-img {
     position: absolute;
     top: var(--profile-top);
     right: var(--profile-right);
     width: var(--profile-size);
-    height: auto;
+    aspect-ratio: 1;
     z-index: 3;
+}
+
+.eclipse {
+    display: block;
+    width: 100%;
+    height: 100%;
 }
 
 .line-green {
     position: absolute;
-    top: calc(var(--profile-top) + var(--profile-radius) - 2px);
-    right: calc(-1 * var(--content-outer-gutter));
-    width: calc(var(--profile-right) + var(--content-outer-gutter));
+    top: 50%;
+    left: calc(100% - 2px);
+    width: calc(var(--profile-right) + var(--content-outer-gutter) + 2px);
     height: 4px;
+    background-color: var(--primary-color);
+    transform: translateY(-50%);
     z-index: 4;
+}
+
+@media (max-width: 980px) {
+    .aboutMe-section {
+        --profile-size: clamp(180px, 32vw, 320px);
+    }
+
+    .aboutMe-content {
+        padding-bottom: calc(
+            var(--about-content-padding) + var(--profile-size) + 32px
+        );
+    }
+
+    .aboutMe-profile-frame,
+    .profile-img {
+        top: auto;
+        right: 50%;
+        bottom: var(--about-content-padding);
+        transform: translateX(50%);
+    }
+
+    .line-green {
+        width: calc(50vw - 50% + 2px);
+    }
 }
