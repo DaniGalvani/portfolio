@@ -82,8 +82,8 @@
     content: "";
     position: absolute;
     top: 58%;
-    right: 0;
-    width: clamp(38px, 5.9vw, 98px);
+    right: calc(-1 * var(--content-outer-gutter));
+    width: calc(clamp(38px, 5.9vw, 98px) + var(--content-outer-gutter));
     height: 4px;
     border-radius: 4px 0 0 4px;
     background-color: var(--secondary-color);
@@ -191,7 +191,7 @@
 .skills-background {
     position: absolute;
     top: clamp(60px, 10.4vw, 120px);
-    left: 0;
+    left: calc(-1 * var(--content-outer-gutter));
     width: clamp(180px, 22.6vw, 325px);
     height: auto;
     z-index: 1;
@@ -247,8 +247,8 @@
     }
 
     .skills-heading::after {
-        right: -24px;
-        width: clamp(36px, 10vw, 80px);
+        right: calc(-24px - var(--content-outer-gutter));
+        width: calc(clamp(36px, 10vw, 80px) + var(--content-outer-gutter));
     }
 
     .skills-intro {

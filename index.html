@@ -14,398 +14,489 @@
     <script src="./script.js" defer></script>
   </head>
   <body>
-    <header>
-      <div class="logo">
-        <a href="#top"
-          ><img src="./assets/img/logo-daniel.svg" alt="Daniel Logo"
-        /></a>
-      </div>
-      <nav class="navbar">
-        <ul>
-          <li><a class="nav-link" href="#aboutMe">About me</a></li>
-          <li><a class="nav-link" href="#skills">Skills</a></li>
-          <li><a class="nav-link" href="#portfolio">Portfolio</a></li>
-        </ul>
-        <div class="language-btn" aria-label="Language selection">
-          <input type="radio" id="btn-de" name="language" value="DE" />
-          <label for="btn-de">DE</label>
-          <input type="radio" id="btn-en" name="language" value="EN" checked />
-          <label for="btn-en">EN</label>
-        </div>
-      </nav>
-    </header>
-    <section class="hero-section">
-      <div class="hero">
-        <img
-          class="profile-image"
-          src="./assets/img/profile_img.png"
-          alt="Profile Image"
-        />
-        <img
-          class="photo-shadows"
-          src="./assets/img/Photo shadows.png"
-          alt="Background Image"
-        />
-        <img
-          class="hero-background"
-          src="./assets/img/hero-background.png"
-          alt="Hero Background Image"
-        />
-      </div>
-      <div class="hero-content">
-        <div class="hero-text">
-          <div class="headline-row">
-            <div class="greeting-wrapper">
-              <p class="greeting">I am</p>
-            </div>
-            <div class="name-title">
-              <p class="name">Daniel Felizetti</p>
-              <p class="title">Frontend Developer</p>
-            </div>
-          </div>
-          <a class="contact-btn" href="#contact"><span>Let's Talk!</span></a>
-        </div>
-        <div class="scroll-indicator">
-          <a href="#about"
-            ><img src="./assets/img/scroll down.svg" alt="Scroll Indicator"
+    <main class="container">
+      <header>
+        <div class="logo">
+          <a href="#top"
+            ><img src="./assets/img/logo-daniel.svg" alt="Daniel Logo"
           /></a>
         </div>
-      </div>
-      <div class="social-media" aria-label="Social media links">
-        <img src="./assets/icons/line-purple.svg" alt="Line Icon" />
-        <a
-          href="https://github.com/danigalvani"
-          target="_blank"
-          aria-label="GitHub"
-        >
-          <img src="./assets/icons/git-default.svg" alt="GitHub Icon" />
-        </a>
-        <a href="mailto:dfelizetti@gmx.de" aria-label="Mail">
-          <img src="./assets/icons/mail-default.svg" alt="Mail Icon" />
-        </a>
-        <a
-          href="https://www.linkedin.com/feed/"
-          target="_blank"
-          aria-label="LinkedIn"
-        >
-          <img src="./assets/icons/linkedin-default.svg" alt="LinkedIn Icon" />
-        </a>
-        <p class="social-media-text">dfelizetti@gmx.de</p>
-      </div>
-    </section>
-    <section id="aboutMe" class="aboutMe-section">
-      <img
-        class="aboutMe-shadow"
-        src="./assets/img/purple shadow about me.png"
-        alt="About Me Shadow"
-      />
-      <div class="aboutMe-content">
-        <h2 class="section-title">About me</h2>
-        <p class="aboutMe-text">
-          I am passionate about IT because I enjoy solving problems through logic and creativity. 
-          Programming motivates me to turn ideas into functional applications while continuously improving my skills.
-        </p>
-        <div class="location-text" aria-label="Location information">
-          <img
-            class="location-icon"
-            src="./assets/icons/location.svg"
-            alt="Location Icon"
-          />
-          <p>
-            I am based in Berlin, Germany, and I am open to remote, hybrid, or on-site work. 
-            I value flexibility, collaboration, and personal responsibility.
-          </p>
-        </div>
-        <div class="bulb-text" aria-label="Motivation information">
-          <img
-            class="bulb-icon"
-            src="./assets/icons/bulb.svg"
-            alt="Bulb Icon"
-          />
-          <p>
-            I am passionate about technology and programming because it allows me to turn creative ideas into practical solutions. 
-            I enjoy learning new technologies and continuously improving my technical skills.
-          </p>
-        </div>
-        <div class="puzzle-text" aria-label="Problem-solving information">
-          <img
-            class="puzzle-icon"
-            src="./assets/icons/puzzle.svg"
-            alt="Puzzle Icon"
-          />
-          <p>
-            I approach challenges with a structured and analytical mindset. 
-            I enjoy solving complex problems, learning from challenges, and achieving effective solutions through persistence and teamwork.
-          </p>
-        </div>
-        <div class="aboutMe-profile-frame">
-          <img
-            class="aboutMe-profile-img"
-            src="./assets/img/aboutMe-profile.png"
-            alt="About Me Profile Image"
-          />
-        </div>
-        <div class="profile-img">
-          <img
-            class="eclipse"
-            src="./assets/img/eclipse.svg"
-            alt="Eclipse Image"
-          />
-          <img
-            class="line-green"
-            src="./assets/icons/line-green.svg"
-            alt="Line Green Image"
-          />
-        </div>
-      </div>
-    </section>
-    <section id="skills" class="skills-section">
-      <div class="skills-glow" aria-hidden="true"></div>
-      <img
-        class="skills-background"
-        src="./assets/img/Green shadow 2.png"
-        alt=""
-        aria-hidden="true"
-      />
-      <div class="skills-layout">
-        <div class="skills-grid" aria-label="Technical skills">
-          <div class="skill-item">
-            <img src="./assets/icons/html.svg" alt="HTML" />
-            <p>HTML</p>
-          </div>
-          <div class="skill-item">
-            <img src="./assets/icons/css.svg" alt="CSS" />
-            <p>CSS</p>
-          </div>
-          <div class="skill-item">
-            <img src="./assets/icons/javascript.svg" alt="JavaScript" />
-            <p>JavaScript</p>
-          </div>
-          <div class="skill-item">
-            <img src="./assets/icons/git.svg" alt="Git" />
-            <p>Git</p>
-          </div>
-          <div class="skill-item">
-            <img src="./assets/icons/api.svg" alt="REST API" />
-            <p>REST API</p>
-          </div>
-          <div class="skill-item">
-            <img src="./assets/icons/scrum.svg" alt="Scrum" />
-            <p>Scrum</p>
-          </div>
-          <div class="skill-item skill-item--learning">
-            <img
-              src="./assets/icons/interest.svg"
-              alt="Continually learning"
+        <nav class="navbar">
+          <ul>
+            <li><a class="nav-link" href="#aboutMe">About me</a></li>
+            <li><a class="nav-link" href="#skills">Skills</a></li>
+            <li><a class="nav-link" href="#portfolio">Portfolio</a></li>
+          </ul>
+          <div class="language-btn" aria-label="Language selection">
+            <input type="radio" id="btn-de" name="language" value="DE" />
+            <label for="btn-de">DE</label>
+            <input
+              type="radio"
+              id="btn-en"
+              name="language"
+              value="EN"
+              checked
             />
-            <p>Continually learning</p>
+            <label for="btn-en">EN</label>
+          </div>
+        </nav>
+      </header>
+      <section class="hero-section">
+        <div class="hero">
+          <img
+            class="profile-image"
+            src="./assets/img/profile_img.png"
+            alt="Profile Image"
+          />
+          <img
+            class="photo-shadows"
+            src="./assets/img/Photo shadows.png"
+            alt="Background Image"
+          />
+          <img
+            class="hero-background"
+            src="./assets/img/hero-background.png"
+            alt="Hero Background Image"
+          />
+        </div>
+        <div class="hero-content">
+          <div class="hero-text">
+            <div class="headline-row">
+              <div class="greeting-wrapper">
+                <p class="greeting">I am</p>
+              </div>
+              <div class="name-title">
+                <p class="name">Daniel Felizetti</p>
+                <p class="title">Frontend Developer</p>
+              </div>
+            </div>
+            <a class="contact-btn" href="#contact"><span>Let's Talk!</span></a>
+          </div>
+          <div class="scroll-indicator">
+            <a href="#about"
+              ><img src="./assets/img/scroll down.svg" alt="Scroll Indicator"
+            /></a>
           </div>
         </div>
-        <div class="skills-copy">
-          <div class="skills-heading">
-            <h2 class="section-title">My skills</h2>
-          </div>
-          <p class="skills-intro">
-            Show that you have used a variety of front-end<br
-              class="desktop-break"
-            />
-            technologies in your projects.
-          </p>
-          <h3>Looking for <span>another skill</span>?</h3>
-          <p class="skills-learning-text">
-            Reveal enthusiasm for learning new technologies<br
-              class="desktop-break"
-            />
-            and frameworks.
-          </p>
-          <a class="skills-contact-btn" href="#contact"
-            ><span>Get in touch</span></a
+        <div class="social-media" aria-label="Social media links">
+          <img src="./assets/icons/line-purple.svg" alt="Line Icon" />
+          <a
+            href="https://github.com/danigalvani"
+            target="_blank"
+            aria-label="GitHub"
           >
-        </div>
-      </div>
-    </section>
-    <section id="portfolio" class="portfolio-section">
-      <div class="portfolio-glow">
-        <img class="portfolio-line-6" src="./assets/img/LINE 6.svg" alt="" aria-hidden="true" />
-        <h2 class="section-title">Portfolio</h2>
-        <img class="portfolio-line-4" src="./assets/img/LINE 4.svg" alt="" aria-hidden="true" />
-      </div>
-      <p class="portfolio-intro">
-        Explore a selection of my work here - Interact with projects to see my skills in Action.
-      </p>
-      <div class="portfolio-list">
-        <article class="portfolio-project">
-          <div class="portfolio-project-image">
-            <img src="./assets/img/join.png" alt="Project Join" />
-          </div>
-          <div class="portfolio-project-copy">
-            <h3>Join</h3>
-            <p class="portfolio-tech">HTML | CSS | JavaScript | Firebase</p>
-            <p class="portfolio-description">
-              Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.
-            </p>
-            <div class="portfolio-actions">
-              <a class="portfolio-btn portfolio-btn--primary" href="#">Live test</a>
-              <a class="portfolio-btn portfolio-btn--outline" href="https://github.com/DaniGalvani/join_portfolio" target="_blank">Github</a>
-            </div>
-          </div>
-        </article>
-        <article class="portfolio-project portfolio-project--reverse">
-          <div class="portfolio-project-image">
-            <img src="./assets/img/pokédex.png" alt="Project Pokédex" />
-          </div>
-          <div class="portfolio-project-copy">
-            <h3>Pokédex</h3>
-            <p class="portfolio-tech">JavaScript | HTML | CSS | API</p>
-            <p class="portfolio-description">
-              A small web application based on a public API. Browse, search and inspect entries with a clean and responsive interface.
-            </p>
-            <div class="portfolio-actions">
-              <a class="portfolio-btn portfolio-btn--primary" href="#">Live test</a>
-              <a class="portfolio-btn portfolio-btn--outline" href="https://github.com/DaniGalvani/Pokedex" target="_blank">Github</a>
-            </div>
-          </div>
-        </article>
-        <article class="portfolio-project">
-          <div class="portfolio-project-image">
-            <img src="./assets/img/pollo_loco.png" alt="Project Pollo Loco" />
-          </div>
-          <div class="portfolio-project-copy">
-            <h3>Pollo Loco</h3>
-            <p class="portfolio-tech">HTML | CSS | JavaScript</p>
-            <p class="portfolio-description">
-              A symple Jump-and-Run game based on an object-oriented approach. Help Pepe to find coins and bottles to fight the evil chicken and save the world.
-            </p>
-            <div class="portfolio-actions">
-              <a class="portfolio-btn portfolio-btn--primary" href="#">Live test</a>
-              <a class="portfolio-btn portfolio-btn--outline" href="https://github.com/DaniGalvani/El_Pollo_Loco" target="_blank">Github</a>
-            </div>
-          </div>
-        </article>
-      </div>
-      <section
-        class="testimonial-slider"
-        aria-label="Testimonials"
-        aria-roledescription="carousel"
-        tabindex="0"
-      >
-        <div class="testimonial-stage" aria-live="polite">
-          <article class="testimonial-slide is-active" data-testimonial-slide>
-            <div class="testimonial-card">
-              <span class="testimonial-quote-mark" aria-hidden="true">“</span>
-              <blockquote>
-                <p>
-                  Michael really kept the team together with his great organization
-                  and clear communication. We wouldn't have got this far without
-                  his commitment.
-                </p>
-                <div class="testimonial-author">
-                  <span aria-hidden="true"></span>
-                  <cite>V. Schuster - Team Partner</cite>
-                </div>
-              </blockquote>
-            </div>
-            <div class="testimonial-portrait">
-              <img
-                src="./assets/img/testimonials/v-schuster.png"
-                alt="Portrait of V. Schuster"
-              />
-            </div>
-          </article>
-
-          <article class="testimonial-slide" data-testimonial-slide>
-            <div class="testimonial-card">
-              <span class="testimonial-quote-mark" aria-hidden="true">“</span>
-              <blockquote>
-                <p>
-                  Michi was a top team colleague at DA. His positive commitment
-                  and willingness to take on responsibility made a significant
-                  contribution to us achieving our goals.
-                </p>
-                <div class="testimonial-author">
-                  <span aria-hidden="true"></span>
-                  <cite>E. Eichinger - Team Partner</cite>
-                </div>
-              </blockquote>
-            </div>
-            <div class="testimonial-portrait">
-              <img
-                src="./assets/img/testimonials/e-eichinger.png"
-                alt="Portrait of E. Eichinger"
-              />
-            </div>
-          </article>
-
-          <article class="testimonial-slide" data-testimonial-slide>
-            <div class="testimonial-card">
-              <span class="testimonial-quote-mark" aria-hidden="true">“</span>
-              <blockquote>
-                <p>
-                  It was a great pleasure to work with Michael. He knows how to
-                  push and encourage team members to present the best work
-                  possible, always adding something to brainstorm. Regarding the
-                  well-being of group members, he was always present and available
-                  to listen and help others, with a great sense of humor as well.
-                </p>
-                <div class="testimonial-author">
-                  <span aria-hidden="true"></span>
-                  <cite>I. Nuber - Frontend Engineer</cite>
-                </div>
-              </blockquote>
-            </div>
-            <div class="testimonial-portrait">
-              <img
-                src="./assets/img/testimonials/i-nuber.png"
-                alt="Portrait of I. Nuber"
-              />
-            </div>
-          </article>
-        </div>
-
-        <div class="testimonial-controls" aria-label="Choose testimonial">
-          <button class="testimonial-arrow" type="button" data-testimonial-prev aria-label="Previous testimonial">
-            <img src="./assets/icons/arrow-left.svg" alt="" aria-hidden="true" />
-          </button>
-          <div class="testimonial-dots">
-            <button class="testimonial-dot is-active" type="button" data-testimonial-dot="0" aria-label="Show testimonial 1" aria-current="true"></button>
-            <button class="testimonial-dot" type="button" data-testimonial-dot="1" aria-label="Show testimonial 2"></button>
-            <button class="testimonial-dot" type="button" data-testimonial-dot="2" aria-label="Show testimonial 3"></button>
-          </div>
-          <button class="testimonial-arrow" type="button" data-testimonial-next aria-label="Next testimonial">
-            <img src="./assets/icons/arrow-right.svg" alt="" aria-hidden="true" />
-          </button>
+            <img src="./assets/icons/git-default.svg" alt="GitHub Icon" />
+          </a>
+          <a href="mailto:dfelizetti@gmx.de" aria-label="Mail">
+            <img src="./assets/icons/mail-default.svg" alt="Mail Icon" />
+          </a>
+          <a
+            href="https://www.linkedin.com/feed/"
+            target="_blank"
+            aria-label="LinkedIn"
+          >
+            <img
+              src="./assets/icons/linkedin-default.svg"
+              alt="LinkedIn Icon"
+            />
+          </a>
+          <p class="social-media-text">dfelizetti@gmx.de</p>
         </div>
       </section>
-    </section>
-    <footer>
-      <div class="logo-footer">
-        <a href="#top"
-          ><img src="./assets/img/logo-daniel.svg" alt="Daniel Logo"
-        /></a>
-        <a class="legal-text" href="#">Legal Notice</a>
-      </div>
-      <div class="copyright">
-        <p class="copyright-text">© Daniel Felizetti 2026</p>
-      </div>
-      <div class="social-media-links">
-        <a
-          href="https://github.com/danigalvani"
-          target="_blank"
-          aria-label="GitHub"
+      <section id="aboutMe" class="aboutMe-section">
+        <img
+          class="aboutMe-shadow"
+          src="./assets/img/purple shadow about me.png"
+          alt="About Me Shadow"
+        />
+        <div class="aboutMe-content">
+          <h2 class="section-title">About me</h2>
+          <p class="aboutMe-text">
+            I am passionate about IT because I enjoy solving problems through
+            logic and creativity. Programming motivates me to turn ideas into
+            functional applications while continuously improving my skills.
+          </p>
+          <div class="location-text" aria-label="Location information">
+            <img
+              class="location-icon"
+              src="./assets/icons/location.svg"
+              alt="Location Icon"
+            />
+            <p>
+              I am based in Berlin, Germany, and I am open to remote, hybrid, or
+              on-site work. I value flexibility, collaboration, and personal
+              responsibility.
+            </p>
+          </div>
+          <div class="bulb-text" aria-label="Motivation information">
+            <img
+              class="bulb-icon"
+              src="./assets/icons/bulb.svg"
+              alt="Bulb Icon"
+            />
+            <p>
+              I am passionate about technology and programming because it allows
+              me to turn creative ideas into practical solutions. I enjoy
+              learning new technologies and continuously improving my technical
+              skills.
+            </p>
+          </div>
+          <div class="puzzle-text" aria-label="Problem-solving information">
+            <img
+              class="puzzle-icon"
+              src="./assets/icons/puzzle.svg"
+              alt="Puzzle Icon"
+            />
+            <p>
+              I approach challenges with a structured and analytical mindset. I
+              enjoy solving complex problems, learning from challenges, and
+              achieving effective solutions through persistence and teamwork.
+            </p>
+          </div>
+          <div class="aboutMe-profile-frame">
+            <img
+              class="aboutMe-profile-img"
+              src="./assets/img/aboutMe-profile.png"
+              alt="About Me Profile Image"
+            />
+          </div>
+          <div class="profile-img">
+            <img
+              class="eclipse"
+              src="./assets/img/eclipse.svg"
+              alt="Eclipse Image"
+            />
+            <img
+              class="line-green"
+              src="./assets/icons/line-green.svg"
+              alt="Line Green Image"
+            />
+          </div>
+        </div>
+      </section>
+      <section id="skills" class="skills-section">
+        <div class="skills-glow" aria-hidden="true"></div>
+        <img
+          class="skills-background"
+          src="./assets/img/Green shadow 2.png"
+          alt=""
+          aria-hidden="true"
+        />
+        <div class="skills-layout">
+          <div class="skills-grid" aria-label="Technical skills">
+            <div class="skill-item">
+              <img src="./assets/icons/html.svg" alt="HTML" />
+              <p>HTML</p>
+            </div>
+            <div class="skill-item">
+              <img src="./assets/icons/css.svg" alt="CSS" />
+              <p>CSS</p>
+            </div>
+            <div class="skill-item">
+              <img src="./assets/icons/javascript.svg" alt="JavaScript" />
+              <p>JavaScript</p>
+            </div>
+            <div class="skill-item">
+              <img src="./assets/icons/git.svg" alt="Git" />
+              <p>Git</p>
+            </div>
+            <div class="skill-item">
+              <img src="./assets/icons/api.svg" alt="REST API" />
+              <p>REST API</p>
+            </div>
+            <div class="skill-item">
+              <img src="./assets/icons/scrum.svg" alt="Scrum" />
+              <p>Scrum</p>
+            </div>
+            <div class="skill-item skill-item--learning">
+              <img
+                src="./assets/icons/interest.svg"
+                alt="Continually learning"
+              />
+              <p>Continually learning</p>
+            </div>
+          </div>
+          <div class="skills-copy">
+            <div class="skills-heading">
+              <h2 class="section-title">My skills</h2>
+            </div>
+            <p class="skills-intro">
+              Show that you have used a variety of front-end<br
+                class="desktop-break"
+              />
+              technologies in your projects.
+            </p>
+            <h3>Looking for <span>another skill</span>?</h3>
+            <p class="skills-learning-text">
+              Reveal enthusiasm for learning new technologies<br
+                class="desktop-break"
+              />
+              and frameworks.
+            </p>
+            <a class="skills-contact-btn" href="#contact"
+              ><span>Get in touch</span></a
+            >
+          </div>
+        </div>
+      </section>
+      <section id="portfolio" class="portfolio-section">
+        <div class="portfolio-glow">
+          <img
+            class="portfolio-line-6"
+            src="./assets/img/LINE 6.svg"
+            alt=""
+            aria-hidden="true"
+          />
+          <h2 class="section-title">Portfolio</h2>
+          <img
+            class="portfolio-line-4"
+            src="./assets/img/LINE 4.svg"
+            alt=""
+            aria-hidden="true"
+          />
+        </div>
+        <p class="portfolio-intro">
+          Explore a selection of my work here - Interact with projects to see my
+          skills in Action.
+        </p>
+        <div class="portfolio-list">
+          <article class="portfolio-project">
+            <div class="portfolio-project-image">
+              <img src="./assets/img/join.png" alt="Project Join" />
+            </div>
+            <div class="portfolio-project-copy">
+              <h3>Join</h3>
+              <p class="portfolio-tech">HTML | CSS | JavaScript | Firebase</p>
+              <p class="portfolio-description">
+                Task manager inspired by the Kanban System. Create and organize
+                tasks using drag and drop functions, assign users and
+                categories.
+              </p>
+              <div class="portfolio-actions">
+                <a class="portfolio-btn portfolio-btn--primary" href="#"
+                  >Live test</a
+                >
+                <a
+                  class="portfolio-btn portfolio-btn--outline"
+                  href="https://github.com/DaniGalvani/join_portfolio"
+                  target="_blank"
+                  >Github</a
+                >
+              </div>
+            </div>
+          </article>
+          <article class="portfolio-project portfolio-project--reverse">
+            <div class="portfolio-project-image">
+              <img src="./assets/img/pokédex.png" alt="Project Pokédex" />
+            </div>
+            <div class="portfolio-project-copy">
+              <h3>Pokédex</h3>
+              <p class="portfolio-tech">JavaScript | HTML | CSS | API</p>
+              <p class="portfolio-description">
+                A small web application based on a public API. Browse, search
+                and inspect entries with a clean and responsive interface.
+              </p>
+              <div class="portfolio-actions">
+                <a class="portfolio-btn portfolio-btn--primary" href="#"
+                  >Live test</a
+                >
+                <a
+                  class="portfolio-btn portfolio-btn--outline"
+                  href="https://github.com/DaniGalvani/Pokedex"
+                  target="_blank"
+                  >Github</a
+                >
+              </div>
+            </div>
+          </article>
+          <article class="portfolio-project">
+            <div class="portfolio-project-image">
+              <img src="./assets/img/pollo_loco.png" alt="Project Pollo Loco" />
+            </div>
+            <div class="portfolio-project-copy">
+              <h3>Pollo Loco</h3>
+              <p class="portfolio-tech">HTML | CSS | JavaScript</p>
+              <p class="portfolio-description">
+                A symple Jump-and-Run game based on an object-oriented approach.
+                Help Pepe to find coins and bottles to fight the evil chicken
+                and save the world.
+              </p>
+              <div class="portfolio-actions">
+                <a class="portfolio-btn portfolio-btn--primary" href="#"
+                  >Live test</a
+                >
+                <a
+                  class="portfolio-btn portfolio-btn--outline"
+                  href="https://github.com/DaniGalvani/El_Pollo_Loco"
+                  target="_blank"
+                  >Github</a
+                >
+              </div>
+            </div>
+          </article>
+        </div>
+        <section
+          class="testimonial-slider"
+          aria-label="Testimonials"
+          aria-roledescription="carousel"
+          tabindex="0"
         >
-          <img src="./assets/icons/git-default.svg" alt="GitHub Icon" />
-        </a>
-        <a href="mailto:dfelizetti@gmx.de" aria-label="Mail">
-          <img src="./assets/icons/mail-default.svg" alt="Mail Icon" />
-        </a>
-        <a
-          href="https://www.linkedin.com/feed/"
-          target="_blank"
-          aria-label="LinkedIn"
-        >
-          <img src="./assets/icons/linkedin-default.svg" alt="LinkedIn Icon" />
-        </a>
-      </div>
-    </footer>
+          <div class="testimonial-stage" aria-live="polite">
+            <article class="testimonial-slide is-active" data-testimonial-slide>
+              <div class="testimonial-card">
+                <span class="testimonial-quote-mark" aria-hidden="true">“</span>
+                <blockquote>
+                  <p>
+                    Michael really kept the team together with his great
+                    organization and clear communication. We wouldn't have got
+                    this far without his commitment.
+                  </p>
+                  <div class="testimonial-author">
+                    <span aria-hidden="true"></span>
+                    <cite>V. Schuster - Team Partner</cite>
+                  </div>
+                </blockquote>
+              </div>
+              <div class="testimonial-portrait">
+                <img
+                  src="./assets/img/testimonials/v-schuster.png"
+                  alt="Portrait of V. Schuster"
+                />
+              </div>
+            </article>
+
+            <article class="testimonial-slide" data-testimonial-slide>
+              <div class="testimonial-card">
+                <span class="testimonial-quote-mark" aria-hidden="true">“</span>
+                <blockquote>
+                  <p>
+                    Michi was a top team colleague at DA. His positive
+                    commitment and willingness to take on responsibility made a
+                    significant contribution to us achieving our goals.
+                  </p>
+                  <div class="testimonial-author">
+                    <span aria-hidden="true"></span>
+                    <cite>E. Eichinger - Team Partner</cite>
+                  </div>
+                </blockquote>
+              </div>
+              <div class="testimonial-portrait">
+                <img
+                  src="./assets/img/testimonials/e-eichinger.png"
+                  alt="Portrait of E. Eichinger"
+                />
+              </div>
+            </article>
+
+            <article class="testimonial-slide" data-testimonial-slide>
+              <div class="testimonial-card">
+                <span class="testimonial-quote-mark" aria-hidden="true">“</span>
+                <blockquote>
+                  <p>
+                    It was a great pleasure to work with Michael. He knows how
+                    to push and encourage team members to present the best work
+                    possible, always adding something to brainstorm. Regarding
+                    the well-being of group members, he was always present and
+                    available to listen and help others, with a great sense of
+                    humor as well.
+                  </p>
+                  <div class="testimonial-author">
+                    <span aria-hidden="true"></span>
+                    <cite>I. Nuber - Frontend Engineer</cite>
+                  </div>
+                </blockquote>
+              </div>
+              <div class="testimonial-portrait">
+                <img
+                  src="./assets/img/testimonials/i-nuber.png"
+                  alt="Portrait of I. Nuber"
+                />
+              </div>
+            </article>
+          </div>
+
+          <div class="testimonial-controls" aria-label="Choose testimonial">
+            <button
+              class="testimonial-arrow"
+              type="button"
+              data-testimonial-prev
+              aria-label="Previous testimonial"
+            >
+              <img
+                src="./assets/icons/arrow-left.svg"
+                alt=""
+                aria-hidden="true"
+              />
+            </button>
+            <div class="testimonial-dots">
+              <button
+                class="testimonial-dot is-active"
+                type="button"
+                data-testimonial-dot="0"
+                aria-label="Show testimonial 1"
+                aria-current="true"
+              ></button>
+              <button
+                class="testimonial-dot"
+                type="button"
+                data-testimonial-dot="1"
+                aria-label="Show testimonial 2"
+              ></button>
+              <button
+                class="testimonial-dot"
+                type="button"
+                data-testimonial-dot="2"
+                aria-label="Show testimonial 3"
+              ></button>
+            </div>
+            <button
+              class="testimonial-arrow"
+              type="button"
+              data-testimonial-next
+              aria-label="Next testimonial"
+            >
+              <img
+                src="./assets/icons/arrow-right.svg"
+                alt=""
+                aria-hidden="true"
+              />
+            </button>
+          </div>
+        </section>
+      </section>
+      <footer>
+        <div class="logo-footer">
+          <a href="#top"
+            ><img src="./assets/img/logo-daniel.svg" alt="Daniel Logo"
+          /></a>
+          <a class="legal-text" href="#">Legal Notice</a>
+        </div>
+        <div class="copyright">
+          <p class="copyright-text">© Daniel Felizetti 2026</p>
+        </div>
+        <div class="social-media-links">
+          <a
+            href="https://github.com/danigalvani"
+            target="_blank"
+            aria-label="GitHub"
+          >
+            <img src="./assets/icons/git-default.svg" alt="GitHub Icon" />
+          </a>
+          <a href="mailto:dfelizetti@gmx.de" aria-label="Mail">
+            <img src="./assets/icons/mail-default.svg" alt="Mail Icon" />
+          </a>
+          <a
+            href="https://www.linkedin.com/feed/"
+            target="_blank"
+            aria-label="LinkedIn"
+          >
+            <img
+              src="./assets/icons/linkedin-default.svg"
+              alt="LinkedIn Icon"
+            />
+          </a>
+        </div>
+      </footer>
+    </main>
   </body>
 </html>

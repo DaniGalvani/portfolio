@@ -1,7 +1,6 @@
 .aboutMe-section {
     position: relative;
-    width: 100vw;
-    max-width: none;
+    width: 100%;
     display: flex;
 }
 
@@ -17,8 +16,7 @@
 
 .aboutMe-content {
     position: relative;
-    width: 100vw;
-    max-width: none;
+    width: 100%;
     padding: clamp(24px, 6.94vw, 100px);
     display: flex;
     flex-direction: column;
@@ -96,8 +94,8 @@
 .line-green {
     position: absolute;
     top: calc(var(--profile-top) + var(--profile-radius) - 2px);
-    right: 0;
-    width: var(--profile-right);
+    right: calc(-1 * var(--content-outer-gutter));
+    width: calc(var(--profile-right) + var(--content-outer-gutter));
     height: 4px;
     z-index: 4;
 }

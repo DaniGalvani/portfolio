@@ -17,6 +17,8 @@
     --secondary-color: #9747FF;
     --background-color: #141D2F;
     --text-color: #FFFFFF;
+    --content-max-width: 1440px;
+    --content-outer-gutter: max(0px, calc((100vw - var(--content-max-width)) / 2));
     --header-height: clamp(74px, 7.36vw, 106px);
     --anchor-scroll-offset: calc(var(--header-height) + 24px);
     --aboutMe-shadow-width: clamp(360px, 56.56vw, 800px);
@@ -43,6 +45,12 @@ body {
     font-family: 'Poppins', sans-serif;
     min-height: 100vh;
     overflow-x: hidden;
+}
+
+.container {
+    position: relative;
+    width: min(100%, var(--content-max-width));
+    margin-inline: auto;
 }
 
 .section-title {

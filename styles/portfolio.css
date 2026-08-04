@@ -1,4 +1,5 @@
 .portfolio-section {
+    --portfolio-line-right-width: clamp(80px, 34vw, 486px);
     position: relative;
     display: flex;
     flex-direction: column;
@@ -7,7 +8,7 @@
     z-index: 9;
     width: 100%;
     padding: clamp(72px, 10vw, 140px) 0 clamp(70px, 9vw, 120px);
-    overflow: hidden;
+    overflow: visible;
 }
 
 .portfolio-section::before,
@@ -22,7 +23,7 @@
 
 .portfolio-section::before {
     top: clamp(-90px, -7vw, -40px);
-    left: clamp(-150px, -8vw, -70px);
+    left: calc(clamp(-150px, -8vw, -70px) - var(--content-outer-gutter));
     width: clamp(230px, 24vw, 345px);
     height: clamp(420px, 43vw, 610px);
     background-image: url("../assets/img/Green shadow 2.png");
@@ -61,9 +62,10 @@
 }
 
 .portfolio-line-4 {
-    flex: 1 1 auto;
-    width: clamp(80px, 34vw, 486px);
-    max-width: 34vw;
+    flex: 0 0 calc(var(--portfolio-line-right-width) + var(--content-outer-gutter));
+    width: calc(var(--portfolio-line-right-width) + var(--content-outer-gutter));
+    max-width: none;
+    margin-right: calc(-1 * var(--content-outer-gutter));
     height: 4px;
     object-fit: cover;
 }
@@ -460,6 +462,7 @@
 
 @media (max-width: 600px) {
     .portfolio-section {
+        --portfolio-line-right-width: clamp(48px, 24vw, 120px);
         padding-top: clamp(56px, 18vw, 90px);
         padding-bottom: clamp(44px, 14vw, 72px);
     }
@@ -473,8 +476,7 @@
     }
 
     .portfolio-line-4 {
-        width: clamp(48px, 24vw, 120px);
-        max-width: 24vw;
+        max-width: none;
     }
 
     .portfolio-intro {
