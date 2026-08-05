@@ -115,14 +115,37 @@ const translations = {
 
 const languageInputs = document.querySelectorAll('input[name="language"]');
 
+const LANGUAGE_STORAGE_KEY = 'portfolio-language';
+
+function getStoredLanguage() {
+  try {
+    return localStorage.getItem(LANGUAGE_STORAGE_KEY);
+  } catch {
+    return null;
+  }
+}
+
+function storeLanguage(language) {
+  try {
+    localStorage.setItem(LANGUAGE_STORAGE_KEY, language);
+  } catch {
+    // Keep the language switch usable when localStorage is unavailable.
+  }
+}
+
 function setLanguage(language) {
-  const selectedTranslations = translations[language];
+  const normalizedLanguage = language.toLowerCase();
+  const selectedTranslations = translations[normalizedLanguage];
 
   if (!selectedTranslations) {
     return;
   }
 
-  document.documentElement.lang = language;
+  document.documentElement.lang = normalizedLanguage;
+
+  languageInputs.forEach((input) => {
+    input.checked = input.value.toLowerCase() === normalizedLanguage;
+  });
 
   document.querySelectorAll("[data-i18n]").forEach((element) => {
     element.textContent = selectedTranslations[element.dataset.i18n];
@@ -138,15 +161,29 @@ function setLanguage(language) {
       selectedTranslations[element.dataset.i18nAriaLabel],
     );
   });
+
+  storeLanguage(normalizedLanguage);
 }
 
 languageInputs.forEach((input) => {
   input.addEventListener("change", () => {
     if (input.checked) {
-      setLanguage(input.value.toLowerCase());
+      setLanguage(input.value);
     }
   });
 });
+
+const storedLanguage = getStoredLanguage();
+
+if (storedLanguage && translations[storedLanguage]) {
+  const storedLanguageInput = Array.from(languageInputs).find(
+    (input) => input.value.toLowerCase() === storedLanguage,
+  );
+
+  if (storedLanguageInput) {
+    storedLanguageInput.checked = true;
+  }
+}
 
 const selectedLanguage = document.querySelector(
   'input[name="language"]:checked',
