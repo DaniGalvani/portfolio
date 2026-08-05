@@ -1,68 +1,103 @@
 @font-face {
-    font-family: 'Poppins';
-    src: url('../fonts/Poppins-Regular.ttf') format('truetype');
-    font-weight: 400;
-    font-style: normal;
+  font-family: "Poppins";
+  src: url("../fonts/Poppins-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
 }
 
 @font-face {
-    font-family: 'Poppins';
-    src: url('../fonts/Poppins-Bold.ttf') format('truetype');
-    font-weight: 700;
-    font-style: normal;
+  font-family: "Poppins";
+  src: url("../fonts/Poppins-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
 }
 
 :root {
-    --primary-color: #70E61C;
-    --secondary-color: #9747FF;
-    --background-color: #141D2F;
-    --text-color: #FFFFFF;
-    --content-max-width: 1440px;
-    --content-outer-gutter: max(0px, calc((100vw - var(--content-max-width)) / 2));
-    --header-height: clamp(74px, 7.36vw, 106px);
-    --anchor-scroll-offset: calc(var(--header-height) + 24px);
-    --aboutMe-shadow-width: clamp(360px, 56.56vw, 800px);
-    --about-content-padding: clamp(24px, 6.94vw, 100px);
-    --about-profile-gap: clamp(24px, 2.22vw, 32px);
-    --profile-top: clamp(96px, 10.42vw, 150px);
-    --profile-right: clamp(40px, 16vw, 260px);
-    --profile-size: min(
-        453px,
-        31.46vw,
-        calc(
-            100vw - var(--about-content-padding) - 471px -
-            var(--about-profile-gap) - var(--profile-right)
-        )
-    );
+  --primary-color: #70e61c;
+  --secondary-color: #9747ff;
+  --background-color: #141d2f;
+  --text-color: #ffffff;
+  --content-max-width: 1440px;
+  --content-outer-gutter: max(
+    0px,
+    calc((100vw - var(--content-max-width)) / 2)
+  );
+  --header-height: clamp(74px, 7.36vw, 106px);
+  --anchor-scroll-offset: calc(var(--header-height) + 24px);
+  --aboutMe-shadow-width: clamp(360px, 56.56vw, 800px);
+  --about-content-padding: clamp(24px, 6.94vw, 100px);
+  --about-profile-gap: clamp(24px, 2.22vw, 32px);
+  --profile-top: clamp(96px, 10.42vw, 150px);
+  --profile-right: clamp(40px, 16vw, 260px);
+  --profile-size: min(
+    453px,
+    31.46vw,
+    calc(
+      100vw - var(--about-content-padding) - 471px - var(--about-profile-gap) -
+        var(--profile-right)
+    )
+  );
+  --shadow-left-offset: clamp(16px, 3vw, 42px);
+  --shadow-fade-width: clamp(56px, 9vw, 120px);
+  --skills-title-edge: clamp(72px, 7.4vw, 108px);
+  --skills-line-width: clamp(38px, 5.9vw, 98px);
+  --skills-line-overhang: var(--content-outer-gutter);
+  --skills-title-gap: max(
+    12px,
+    calc(var(--skills-title-edge) - var(--skills-line-width))
+  );
+  --portfolio-line-right-width: clamp(80px, 34vw, 486px);
+}
+
+@media (max-width: 1200px) {
+  :root {
+    --skills-line-width: clamp(24px, 4vw, 48px);
+  }
+}
+
+@media (max-width: 980px) {
+  :root {
+    --profile-size: clamp(180px, 32vw, 320px);
+    --skills-title-edge: clamp(72px, 14vw, 112px);
+    --skills-line-width: clamp(36px, 10vw, 80px);
+    --skills-line-overhang: calc(24px + var(--content-outer-gutter));
+  }
+}
+
+@media (max-width: 600px) {
+  :root {
+    --skills-title-edge: clamp(68px, 17vw, 88px);
+    --portfolio-line-right-width: clamp(48px, 24vw, 120px);
+  }
 }
 
 html {
-    scroll-padding-top: var(--anchor-scroll-offset);
+  scroll-padding-top: var(--anchor-scroll-offset);
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 body {
-    background-color: var(--background-color);
-    color: var(--text-color);
-    font-family: 'Poppins', sans-serif;
-    min-height: 100vh;
-    overflow-x: hidden;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: "Poppins", sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
 }
 
 .container {
-    position: relative;
-    width: min(100%, var(--content-max-width));
-    margin-inline: auto;
+  position: relative;
+  width: min(100%, var(--content-max-width));
+  margin-inline: auto;
 }
 
 .section-title {
-    font-size: clamp(24px, 6.25vw, 90px);
-    font-weight: 700;
-    color: var(--text-color);
+  font-size: clamp(24px, 6.25vw, 90px);
+  font-weight: 700;
+  color: var(--text-color);
 }

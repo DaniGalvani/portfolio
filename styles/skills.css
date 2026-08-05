@@ -63,10 +63,6 @@
 }
 
 .skills-copy {
-    --skills-title-edge: clamp(72px, 7.4vw, 108px);
-    --skills-line-width: clamp(38px, 5.9vw, 98px);
-    --skills-line-overhang: var(--content-outer-gutter);
-    --skills-title-gap: max(12px, calc(var(--skills-title-edge) - var(--skills-line-width)));
     padding: 42px 0 60px 16px;
     text-align: right;
     display: flex;
@@ -215,7 +211,6 @@
     }
 
     .skills-copy {
-        --skills-line-width: clamp(24px, 4vw, 48px);
         padding-left: 0;
     }
 
@@ -242,9 +237,6 @@
     }
 
     .skills-copy {
-        --skills-title-edge: clamp(72px, 14vw, 112px);
-        --skills-line-width: clamp(36px, 10vw, 80px);
-        --skills-line-overhang: calc(24px + var(--content-outer-gutter));
         padding: 48px 24px 20px;
     }
 
@@ -267,7 +259,6 @@
 
 @media (max-width: 600px) {
     .skills-copy {
-        --skills-title-edge: clamp(68px, 17vw, 88px);
         padding-inline: 24px;
     }
 

@@ -19,8 +19,6 @@
 }
 
 .photo-shadows {
-  --shadow-left-offset: clamp(16px, 3vw, 42px);
-  --shadow-fade-width: clamp(56px, 9vw, 120px);
   position: absolute;
   top: clamp(-80px, 2vw, -28px);
   left: var(--shadow-left-offset);
