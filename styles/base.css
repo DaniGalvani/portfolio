@@ -18,6 +18,7 @@
   --background-color: #141d2f;
   --text-color: #ffffff;
   --content-max-width: 1440px;
+  --viewport-edge-overscan: 40px;
   --content-outer-gutter: max(
     0px,
     calc((100vw - var(--content-max-width)) / 2)
@@ -41,7 +42,9 @@
   --shadow-fade-width: clamp(56px, 9vw, 120px);
   --skills-title-edge: clamp(72px, 7.4vw, 108px);
   --skills-line-width: clamp(38px, 5.9vw, 98px);
-  --skills-line-overhang: var(--content-outer-gutter);
+  --skills-line-overhang: calc(
+    var(--content-outer-gutter) + var(--viewport-edge-overscan)
+  );
   --skills-title-gap: max(
     12px,
     calc(var(--skills-title-edge) - var(--skills-line-width))
@@ -60,7 +63,9 @@
     --profile-size: clamp(180px, 32vw, 320px);
     --skills-title-edge: clamp(72px, 14vw, 112px);
     --skills-line-width: clamp(36px, 10vw, 80px);
-    --skills-line-overhang: calc(24px + var(--content-outer-gutter));
+    --skills-line-overhang: calc(
+      24px + var(--content-outer-gutter) + var(--viewport-edge-overscan)
+    );
   }
 }
 

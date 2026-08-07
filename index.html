@@ -550,9 +550,10 @@
             action="mailto:dfelizetti@gmx.de"
             method="post"
             enctype="text/plain"
+            novalidate
             data-contact-form
           >
-            <div class="contact-field">
+            <div class="contact-field" data-contact-field>
               <label
                 class="visually-hidden"
                 for="contact-name"
@@ -568,9 +569,19 @@
                 data-i18n-placeholder="contactNamePlaceholder"
                 required
               />
+              <p
+                class="contact-error"
+                id="contact-name-error"
+                data-contact-error="valueMissing"
+                data-i18n="contactNameRequired"
+                aria-live="polite"
+                hidden
+              >
+                Your name is required
+              </p>
             </div>
 
-            <div class="contact-field">
+            <div class="contact-field" data-contact-field>
               <label
                 class="visually-hidden"
                 for="contact-email"
@@ -586,9 +597,29 @@
                 data-i18n-placeholder="contactEmailPlaceholder"
                 required
               />
+              <p
+                class="contact-error"
+                id="contact-email-required-error"
+                data-contact-error="valueMissing"
+                data-i18n="contactEmailRequired"
+                aria-live="polite"
+                hidden
+              >
+                Your email is required
+              </p>
+              <p
+                class="contact-error"
+                id="contact-email-invalid-error"
+                data-contact-error="typeMismatch"
+                data-i18n="contactEmailInvalid"
+                aria-live="polite"
+                hidden
+              >
+                Please enter a valid email address
+              </p>
             </div>
 
-            <div class="contact-field">
+            <div class="contact-field" data-contact-field>
               <label
                 class="visually-hidden"
                 for="contact-message"
@@ -603,9 +634,19 @@
                 data-i18n-placeholder="contactMessagePlaceholder"
                 required
               ></textarea>
+              <p
+                class="contact-error"
+                id="contact-message-error"
+                data-contact-error="valueMissing"
+                data-i18n="contactMessageRequired"
+                aria-live="polite"
+                hidden
+              >
+                Your message is required
+              </p>
             </div>
 
-            <div class="contact-privacy">
+            <div class="contact-privacy" data-contact-field>
               <input
                 id="contact-privacy"
                 name="privacy-policy-accepted"
@@ -616,6 +657,16 @@
                 I've read the <a href="#privacy-policy">privacy policy</a> and
                 agree to the processing of my data as outlined.
               </label>
+              <p
+                class="contact-error contact-privacy-error"
+                id="contact-privacy-error"
+                data-contact-error="valueMissing"
+                data-i18n="contactPrivacyRequired"
+                aria-live="polite"
+                hidden
+              >
+                Please accept the privacy policy.
+              </p>
             </div>
 
             <button

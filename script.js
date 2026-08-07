@@ -97,26 +97,116 @@ if (contactForm) {
   const contactSubmitButton = contactForm.querySelector(
     "[data-contact-submit]",
   );
-  const requiredContactTextFields = Array.from(
-    contactForm.querySelectorAll(
-      'input[type="text"], input[type="email"], textarea',
-    ),
+  const requiredContactFields = Array.from(
+    contactForm.querySelectorAll("input[required], textarea[required]"),
   );
+  const touchedContactFields = new Set();
+
+  function getContactFieldError(field) {
+    if (field.type === "checkbox") {
+      return field.checked ? null : "valueMissing";
+    }
+
+    if (field.value.trim().length === 0) {
+      return "valueMissing";
+    }
+
+    if (field.validity.typeMismatch) {
+      return "typeMismatch";
+    }
+
+    return field.validity.valid ? null : "valueMissing";
+  }
+
+  function updateContactFieldState(field, forceError = false) {
+    const fieldWrapper = field.closest("[data-contact-field]");
+    const errorType = getContactFieldError(field);
+    const shouldShowError =
+      Boolean(errorType) && (forceError || touchedContactFields.has(field));
+    const errorMessages = fieldWrapper.querySelectorAll(
+      "[data-contact-error]",
+    );
+
+    fieldWrapper.classList.toggle("is-invalid", shouldShowError);
+    field.setAttribute("aria-invalid", String(shouldShowError));
+
+    errorMessages.forEach((errorMessage) => {
+      const isActiveError =
+        shouldShowError && errorMessage.dataset.contactError === errorType;
+
+      errorMessage.hidden = !isActiveError;
+    });
+
+    const activeError = fieldWrapper.querySelector(
+      `[data-contact-error="${errorType}"]`,
+    );
+
+    if (shouldShowError && activeError) {
+      field.setAttribute("aria-describedby", activeError.id);
+    } else {
+      field.removeAttribute("aria-describedby");
+    }
+  }
 
   function updateContactSubmitState() {
-    const hasContent = requiredContactTextFields.every(
-      (field) => field.value.trim().length > 0,
+    const isComplete = requiredContactFields.every(
+      (field) => getContactFieldError(field) === null,
     );
-    const isComplete = hasContent && contactForm.checkValidity();
+
     contactSubmitButton.disabled = !isComplete;
     contactSubmitButton.setAttribute("aria-disabled", String(!isComplete));
   }
 
-  contactForm.addEventListener("input", updateContactSubmitState);
-  contactForm.addEventListener("change", updateContactSubmitState);
-  contactForm.addEventListener("reset", () => {
-    window.requestAnimationFrame(updateContactSubmitState);
+  requiredContactFields.forEach((field) => {
+    field.addEventListener("blur", () => {
+      touchedContactFields.add(field);
+      updateContactFieldState(field);
+    });
+
+    field.addEventListener("input", () => {
+      updateContactFieldState(field);
+      updateContactSubmitState();
+    });
+
+    field.addEventListener("change", () => {
+      updateContactFieldState(field);
+      updateContactSubmitState();
+    });
   });
 
+  contactForm.addEventListener("submit", (event) => {
+    const invalidFields = requiredContactFields.filter(
+      (field) => getContactFieldError(field) !== null,
+    );
+
+    if (invalidFields.length === 0) {
+      return;
+    }
+
+    event.preventDefault();
+
+    invalidFields.forEach((field) => {
+      touchedContactFields.add(field);
+      updateContactFieldState(field, true);
+    });
+
+    invalidFields[0].focus();
+    updateContactSubmitState();
+  });
+
+  contactForm.addEventListener("reset", () => {
+    touchedContactFields.clear();
+
+    window.requestAnimationFrame(() => {
+      requiredContactFields.forEach((field) => {
+        updateContactFieldState(field);
+      });
+      updateContactSubmitState();
+    });
+  });
+
+  requiredContactFields.forEach((field) => {
+    updateContactFieldState(field);
+  });
   updateContactSubmitState();
 }

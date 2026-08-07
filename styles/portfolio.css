@@ -61,10 +61,18 @@
 }
 
 .portfolio-line-4 {
-    flex: 0 0 calc(var(--portfolio-line-right-width) + var(--content-outer-gutter));
-    width: calc(var(--portfolio-line-right-width) + var(--content-outer-gutter));
+    flex: 0 0 calc(
+        var(--portfolio-line-right-width) + var(--content-outer-gutter) +
+        var(--viewport-edge-overscan)
+    );
+    width: calc(
+        var(--portfolio-line-right-width) + var(--content-outer-gutter) +
+        var(--viewport-edge-overscan)
+    );
     max-width: none;
-    margin-right: calc(-1 * var(--content-outer-gutter));
+    margin-right: calc(
+        0px - var(--content-outer-gutter) - var(--viewport-edge-overscan)
+    );
     height: 4px;
     object-fit: cover;
 }

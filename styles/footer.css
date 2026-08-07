@@ -1,5 +1,7 @@
 footer {
   position: relative;
+  z-index: 1;
+  isolation: isolate;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -13,10 +15,20 @@ footer::before {
   content: '';
   position: absolute;
   top: 0;
-  left: calc(-1 * var(--content-outer-gutter));
-  width: 100vw;
-  height: 4px;
-  background-color: var(--primary-color);
+  left: 50%;
+  z-index: -1;
+  width: calc(
+    100vw + var(--viewport-edge-overscan) + var(--viewport-edge-overscan)
+  );
+  height: 100%;
+  transform: translateX(-50%);
+  background: linear-gradient(
+    to bottom,
+    var(--primary-color) 0,
+    var(--primary-color) 4px,
+    var(--background-color) 4px,
+    var(--background-color) 100%
+  );
 }
 
 .logo-footer {

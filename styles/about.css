@@ -101,7 +101,10 @@
     position: absolute;
     top: 50%;
     left: calc(100% - 2px);
-    width: calc(var(--profile-right) + var(--content-outer-gutter) + 2px);
+    width: calc(
+        var(--profile-right) + var(--content-outer-gutter) +
+        var(--viewport-edge-overscan) + 2px
+    );
     height: 4px;
     background-color: var(--primary-color);
     transform: translateY(-50%);
@@ -124,6 +127,6 @@
     }
 
     .line-green {
-        width: calc(50vw - 50% + 2px);
+        width: calc(50vw - 50% + var(--viewport-edge-overscan) + 2px);
     }
 }
