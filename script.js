@@ -90,3 +90,33 @@ if (testimonialSlider) {
 
   showTestimonial(activeTestimonialIndex);
 }
+
+const contactForm = document.querySelector("[data-contact-form]");
+
+if (contactForm) {
+  const contactSubmitButton = contactForm.querySelector(
+    "[data-contact-submit]",
+  );
+  const requiredContactTextFields = Array.from(
+    contactForm.querySelectorAll(
+      'input[type="text"], input[type="email"], textarea',
+    ),
+  );
+
+  function updateContactSubmitState() {
+    const hasContent = requiredContactTextFields.every(
+      (field) => field.value.trim().length > 0,
+    );
+    const isComplete = hasContent && contactForm.checkValidity();
+    contactSubmitButton.disabled = !isComplete;
+    contactSubmitButton.setAttribute("aria-disabled", String(!isComplete));
+  }
+
+  contactForm.addEventListener("input", updateContactSubmitState);
+  contactForm.addEventListener("change", updateContactSubmitState);
+  contactForm.addEventListener("reset", () => {
+    window.requestAnimationFrame(updateContactSubmitState);
+  });
+
+  updateContactSubmitState();
+}

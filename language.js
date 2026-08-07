@@ -53,6 +53,22 @@ const translations = {
     showTestimonial2: "Show testimonial 2",
     showTestimonial3: "Show testimonial 3",
     nextTestimonial: "Next testimonial",
+    contactTitle: "Contact",
+    contactQuestion: "Got a problem to solve?",
+    contactIntro:
+      "Encourage people to contact you and describe what role you are interested in. Show that you will add value to their projects through your work.",
+    contactPrompt:
+      "Need a Frontend developer? <strong>Contact me!</strong>",
+    contactNameLabel: "Your name",
+    contactNamePlaceholder: "Your name",
+    contactEmailLabel: "Your email",
+    contactEmailPlaceholder: "Your email",
+    contactMessageLabel: "Your message",
+    contactMessagePlaceholder: "Your message",
+    contactPrivacy:
+      'I\'ve read the <a href="#privacy-policy">privacy policy</a> and agree to the processing of my data as outlined.',
+    contactSubmit: "Send message :)",
+    backToTop: "Back to top",
     legalNotice: "Legal Notice",
   },
   de: {
@@ -109,6 +125,22 @@ const translations = {
     showTestimonial2: "Referenz 2 anzeigen",
     showTestimonial3: "Referenz 3 anzeigen",
     nextTestimonial: "Nächste Referenz",
+    contactTitle: "Kontakt",
+    contactQuestion: "Gibt es ein Problem zu lösen?",
+    contactIntro:
+      "Kontaktiere mich gerne und erzähle mir, für welche Rolle du Unterstützung suchst. Mit meiner Arbeit schaffe ich einen echten Mehrwert für dein Projekt.",
+    contactPrompt:
+      "Du suchst einen Frontend-Entwickler? <strong>Kontaktiere mich!</strong>",
+    contactNameLabel: "Dein Name",
+    contactNamePlaceholder: "Dein Name",
+    contactEmailLabel: "Deine E-Mail-Adresse",
+    contactEmailPlaceholder: "Deine E-Mail-Adresse",
+    contactMessageLabel: "Deine Nachricht",
+    contactMessagePlaceholder: "Deine Nachricht",
+    contactPrivacy:
+      'Ich habe die <a href="#privacy-policy">Datenschutzerklärung</a> gelesen und stimme der beschriebenen Verarbeitung meiner Daten zu.',
+    contactSubmit: "Nachricht senden :)",
+    backToTop: "Nach oben",
     legalNotice: "Impressum",
   },
 };
@@ -159,6 +191,13 @@ function setLanguage(language) {
     element.setAttribute(
       "aria-label",
       selectedTranslations[element.dataset.i18nAriaLabel],
+    );
+  });
+
+  document.querySelectorAll("[data-i18n-placeholder]").forEach((element) => {
+    element.setAttribute(
+      "placeholder",
+      selectedTranslations[element.dataset.i18nPlaceholder],
     );
   });
 

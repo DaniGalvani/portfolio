@@ -10,12 +10,13 @@
     <link rel="stylesheet" href="./styles/about.css" />
     <link rel="stylesheet" href="./styles/skills.css" />
     <link rel="stylesheet" href="./styles/portfolio.css" />
+    <link rel="stylesheet" href="./styles/contact.css" />
     <link rel="stylesheet" href="./styles/footer.css" />
     <script src="./language.js" defer></script>
     <script src="./script.js" defer></script>
   </head>
   <body>
-    <main class="container">
+    <main id="top" class="container">
       <header>
         <div class="logo">
           <a href="#top"
@@ -523,6 +524,117 @@
             </button>
           </div>
         </section>
+      </section>
+      <section id="contact" class="contact-section">
+        <div class="contact-heading">
+          <span class="contact-heading-line" aria-hidden="true"></span>
+          <h2 class="section-title" data-i18n="contactTitle">Contact</h2>
+          <span aria-hidden="true"></span>
+        </div>
+
+        <div class="contact-content">
+          <div class="contact-copy">
+            <h3 data-i18n="contactQuestion">Got a problem to solve?</h3>
+            <p data-i18n="contactIntro">
+              Encourage people to contact you and describe what role you are
+              interested in. Show that you will add value to their projects
+              through your work.
+            </p>
+            <p data-i18n-html="contactPrompt">
+              Need a Frontend developer? <strong>Contact me!</strong>
+            </p>
+          </div>
+
+          <form
+            class="contact-form"
+            action="mailto:dfelizetti@gmx.de"
+            method="post"
+            enctype="text/plain"
+            data-contact-form
+          >
+            <div class="contact-field">
+              <label
+                class="visually-hidden"
+                for="contact-name"
+                data-i18n="contactNameLabel"
+                >Your name</label
+              >
+              <input
+                id="contact-name"
+                name="name"
+                type="text"
+                autocomplete="name"
+                placeholder="Your name"
+                data-i18n-placeholder="contactNamePlaceholder"
+                required
+              />
+            </div>
+
+            <div class="contact-field">
+              <label
+                class="visually-hidden"
+                for="contact-email"
+                data-i18n="contactEmailLabel"
+                >Your email</label
+              >
+              <input
+                id="contact-email"
+                name="email"
+                type="email"
+                autocomplete="email"
+                placeholder="Your email"
+                data-i18n-placeholder="contactEmailPlaceholder"
+                required
+              />
+            </div>
+
+            <div class="contact-field">
+              <label
+                class="visually-hidden"
+                for="contact-message"
+                data-i18n="contactMessageLabel"
+                >Your message</label
+              >
+              <textarea
+                id="contact-message"
+                name="message"
+                rows="7"
+                placeholder="Your message"
+                data-i18n-placeholder="contactMessagePlaceholder"
+                required
+              ></textarea>
+            </div>
+
+            <div class="contact-privacy">
+              <input
+                id="contact-privacy"
+                name="privacy-policy-accepted"
+                type="checkbox"
+                required
+              />
+              <label for="contact-privacy" data-i18n-html="contactPrivacy">
+                I've read the <a href="#privacy-policy">privacy policy</a> and
+                agree to the processing of my data as outlined.
+              </label>
+            </div>
+
+            <button
+              class="contact-submit"
+              type="submit"
+              disabled
+              data-contact-submit
+            >
+              <span data-i18n="contactSubmit">Send message :)</span>
+            </button>
+          </form>
+        </div>
+
+        <a
+          class="contact-back-to-top"
+          href="#top"
+          aria-label="Back to top"
+          data-i18n-aria-label="backToTop"
+        ></a>
       </section>
       <footer>
         <div class="logo-footer">
