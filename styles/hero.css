@@ -1,4 +1,6 @@
 .hero-section {
+  --hero-bottom-offset: clamp(34px, 6.9vw, 100px);
+
   position: relative;
   width: 100%;
   min-height: clamp(500px, 72vw, 1030px);
@@ -166,7 +168,7 @@
 
 .hero-section .social-media {
   position: absolute;
-  bottom: clamp(34px, 6.9vw, 100px);
+  bottom: var(--hero-bottom-offset);
   width: auto;
   height: 30px;
   gap: clamp(18px, 2.2vw, 32px);
@@ -229,18 +231,19 @@
   height: 4px;
 }
 
-.hero-content .scroll-indicator {
+.hero-section .scroll-indicator {
   position: absolute;
-  bottom: clamp(0px, 1.4vw, 0px);
-  display: flex;
-  justify-content: flex-end;
-  width: 100%;
+  right: clamp(16px, 3vw, 42px);
+  bottom: var(--hero-bottom-offset);
   z-index: 4;
 }
 
-.hero-content .scroll-indicator img {
+.hero-section .scroll-indicator img {
+  display: block;
   width: auto;
-  height: 160px;
+  height: clamp(128px, 11.1vw, 160px);
+  pointer-events: none;
+  user-select: none;
 }
 
 @media (prefers-reduced-motion: reduce) {

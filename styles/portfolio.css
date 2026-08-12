@@ -21,8 +21,9 @@
 }
 
 .portfolio-section::before {
+    content: none;
     top: clamp(-90px, -7vw, -40px);
-    left: calc(clamp(-150px, -8vw, -70px) - var(--content-outer-gutter));
+    left: clamp(-150px, -8vw, -70px);
     width: clamp(230px, 24vw, 345px);
     height: clamp(420px, 43vw, 610px);
     background-image: url("../assets/img/Green shadow 2.png");
@@ -30,11 +31,11 @@
 
 .portfolio-project:last-child::before {
     top: clamp(-120px, -8vw, -72px);
-    left: calc((100% - 100vw) / 2);
-    width: min(52vw, 750px);
+    left: calc((100% - var(--shadow-layout-width)) / 2);
+    width: min(52.813765vw, 761.737px);
     height: auto;
-    aspect-ratio: 827 / 934;
-    transform: translateX(-25%);
+    aspect-ratio: 839.942 / 934;
+    transform: translateX(-26.162521%);
     background-image: url("../assets/img/Purple shadow portfolio.svg");
 }
 
@@ -229,12 +230,22 @@
     position: absolute;
     top: 3%;
     left: calc(100% - 68px);
-    width: max(180px, calc((100vw - 1200px) / 2 + 120px));
+    width: max(
+        180px,
+        calc((var(--shadow-layout-width) - 1200px) / 2 + 120px)
+    );
     height: 86%;
     z-index: -1;
     pointer-events: none;
     background: radial-gradient(ellipse at right, rgba(112, 230, 28, 0.68) 0%, rgba(112, 230, 28, 0.16) 42%, transparent 72%);
     filter: blur(18px);
+}
+
+@media (min-width: 1440px) {
+    .portfolio-project:last-child::before {
+        top: -115.2px;
+        width: 760.518222px;
+    }
 }
 
 .testimonial-stage {

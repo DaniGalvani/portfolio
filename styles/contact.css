@@ -9,7 +9,7 @@
 .contact-section::before {
   content: "";
   position: absolute;
-  left: calc(-140px - var(--content-outer-gutter));
+  left: -140px;
   bottom: -210px;
   z-index: -1;
   width: clamp(380px, 47.08vw, 678px);
@@ -17,6 +17,12 @@
   background: url("../assets/img/purple-shadow-contact.svg") center / 100% 100%
     no-repeat;
   pointer-events: none;
+}
+
+@media (min-width: 1440px) {
+  .contact-section::before {
+    left: max(-140px, calc(-1 * var(--content-outer-gutter)));
+  }
 }
 
 .contact-heading {
@@ -76,6 +82,7 @@
 
 .contact-form {
   --contact-error-color: #e61c40;
+  --contact-error-space: 30px;
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -84,6 +91,7 @@
 
 .contact-field {
   position: relative;
+  padding-bottom: var(--contact-error-space);
 }
 
 .contact-field + .contact-field {
@@ -167,7 +175,11 @@
 }
 
 .contact-error {
-  margin-top: 8px;
+  position: absolute;
+  top: calc(100% - var(--contact-error-space) + 8px);
+  right: 0;
+  left: 0;
+  margin: 0;
   color: var(--contact-error-color);
   font-size: 14px;
   line-height: 1.45;
@@ -178,11 +190,13 @@
 }
 
 .contact-privacy {
+  position: relative;
   display: grid;
   grid-template-columns: 20px 1fr;
   align-items: start;
   gap: 10px;
   margin-top: 16px;
+  padding-bottom: var(--contact-error-space);
 }
 
 .contact-privacy input {
@@ -233,11 +247,6 @@
 .contact-privacy a:focus-visible {
   color: var(--primary-color);
   text-decoration: underline;
-}
-
-.contact-privacy-error {
-  grid-column: 1 / -1;
-  margin-top: 6px;
 }
 
 .contact-submit {
@@ -350,6 +359,10 @@
 
   .contact-field + .contact-field {
     margin-top: 16px;
+  }
+
+  .contact-form {
+    --contact-error-space: 50px;
   }
 
   .contact-field input,

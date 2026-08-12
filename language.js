@@ -1,6 +1,6 @@
 const translations = {
   en: {
-    pageTitle: "Portfolio",
+    pageTitle: "Daniel Felizetti | Frontend Developer",
     navAbout: "About me",
     navSkills: "Skills",
     languageSelection: "Language selection",
@@ -77,7 +77,7 @@ const translations = {
     legalNotice: "Legal Notice",
   },
   de: {
-    pageTitle: "Portfolio",
+    pageTitle: "Daniel Felizetti | Frontend Entwickler",
     navAbout: "Über mich",
     navSkills: "Fähigkeiten",
     languageSelection: "Sprachauswahl",
