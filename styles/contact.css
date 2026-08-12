@@ -3,26 +3,21 @@
   isolation: isolate;
   width: 100%;
   padding: clamp(52px, 6vw, 88px) 0 clamp(86px, 9vw, 132px);
-  overflow: visible;
+  overflow-x: visible;
+  overflow-y: clip;
 }
 
 .contact-section::before {
   content: "";
   position: absolute;
-  left: -140px;
-  bottom: -210px;
+  left: clamp(-200px, -13.89vw, -140px);
+  bottom: clamp(-380px, -26.39vw, -210px);
   z-index: -1;
-  width: clamp(380px, 47.08vw, 678px);
-  aspect-ratio: 678 / 805;
+  width: clamp(380px, 51.88vw, 747px);
+  aspect-ratio: 747 / 903;
   background: url("../assets/img/purple-shadow-contact.svg") center / 100% 100%
     no-repeat;
   pointer-events: none;
-}
-
-@media (min-width: 1440px) {
-  .contact-section::before {
-    left: max(-140px, calc(-1 * var(--content-outer-gutter)));
-  }
 }
 
 .contact-heading {
