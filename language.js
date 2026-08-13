@@ -75,6 +75,23 @@ const translations = {
     contactSubmit: "Send message :)",
     backToTop: "Back to top",
     legalNotice: "Legal Notice",
+    legalPageTitle: "Legal Notice | Daniel Felizetti",
+    legalHome: "Back to homepage",
+    legalEyebrow: "Legal information",
+    legalHeading: "Legal Notice",
+    legalIntro:
+      "Provider information for this portfolio website in accordance with German law.",
+    legalProviderTitle: "Information pursuant to Section 5 DDG",
+    legalStreetPlaceholder: "Tannenweg 18",
+    legalCityPlaceholder: "13587 Berlin",
+    legalCountry: "Germany",
+    legalPlaceholderNote:
+      "Important: Replace the highlighted address placeholders with a complete, serviceable postal address before publishing this page.",
+    legalContactTitle: "Contact",
+    legalEmailLabel: "Email",
+    legalEditorialTitle: "Responsible for editorial content",
+    legalEditorialLaw: "pursuant to Section 18(2) MStV",
+    legalAddressReference: "Address as stated above",
   },
   de: {
     pageTitle: "Daniel Felizetti | Frontend Entwickler",
@@ -152,6 +169,23 @@ const translations = {
     contactSubmit: "Nachricht senden :)",
     backToTop: "Nach oben",
     legalNotice: "Impressum",
+    legalPageTitle: "Impressum | Daniel Felizetti",
+    legalHome: "Zurück zur Startseite",
+    legalEyebrow: "Rechtliche Informationen",
+    legalHeading: "Impressum",
+    legalIntro:
+      "Anbieterkennzeichnung für diese Portfolio-Webseite nach deutschem Recht.",
+    legalProviderTitle: "Angaben gemäß § 5 DDG",
+    legalStreetPlaceholder: "Tannenweg 18",
+    legalCityPlaceholder: "13587 Berlin",
+    legalCountry: "Deutschland",
+    legalPlaceholderNote:
+      "Wichtig: Ersetze die markierten Platzhalter vor der Veröffentlichung durch eine vollständige, ladungsfähige Anschrift.",
+    legalContactTitle: "Kontakt",
+    legalEmailLabel: "E-Mail",
+    legalEditorialTitle: "Redaktionell verantwortlich",
+    legalEditorialLaw: "gemäß § 18 Abs. 2 MStV",
+    legalAddressReference: "Anschrift wie oben",
   },
 };
 

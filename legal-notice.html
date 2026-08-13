@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Legal notice and provider information for Daniel Felizetti's portfolio."
+    />
+    <title data-i18n="legalPageTitle">Legal Notice | Daniel Felizetti</title>
+    <link
+      rel="shortcut icon"
+      href="./assets/icons/Designer.png"
+      type="image/png"
+    />
+    <link rel="stylesheet" href="./styles/base.css" />
+    <link rel="stylesheet" href="./styles/header.css" />
+    <link rel="stylesheet" href="./styles/footer.css" />
+    <link rel="stylesheet" href="./styles/legal-notice.css" />
+    <script src="./language.js" defer></script>
+  </head>
+  <body>
+    <main id="top" class="container legal-page">
+      <header>
+        <div class="logo">
+          <a
+            href="./index.html"
+            aria-label="Back to homepage"
+            data-i18n-aria-label="legalHome"
+          >
+            <img src="./assets/img/logo-daniel.svg" alt="Daniel Logo" />
+          </a>
+        </div>
+
+        <nav class="navbar" aria-label="Main navigation">
+          <ul>
+            <li>
+              <a
+                class="nav-link"
+                href="./index.html#aboutMe"
+                data-i18n="navAbout"
+                >About me</a
+              >
+            </li>
+            <li>
+              <a
+                class="nav-link"
+                href="./index.html#skills"
+                data-i18n="navSkills"
+                >Skills</a
+              >
+            </li>
+            <li>
+              <a class="nav-link" href="./index.html#portfolio">Portfolio</a>
+            </li>
+          </ul>
+
+          <div
+            class="language-btn"
+            aria-label="Language selection"
+            data-i18n-aria-label="languageSelection"
+          >
+            <input type="radio" id="btn-de" name="language" value="DE" />
+            <label for="btn-de">DE</label>
+            <input
+              type="radio"
+              id="btn-en"
+              name="language"
+              value="EN"
+              checked
+            />
+            <label for="btn-en">EN</label>
+          </div>
+        </nav>
+      </header>
+
+      <article class="legal-content" aria-labelledby="legal-heading">
+        <a class="legal-back-link" href="./index.html">
+          <span aria-hidden="true">←</span>
+          <span data-i18n="legalHome">Back to homepage</span>
+        </a>
+
+        <div class="legal-heading-block">
+          <p class="legal-eyebrow" data-i18n="legalEyebrow">
+            Legal information
+          </p>
+          <h1 id="legal-heading" data-i18n="legalHeading">Legal Notice</h1>
+          <p class="legal-intro" data-i18n="legalIntro">
+            Provider information for this portfolio website in accordance with
+            German law.
+          </p>
+        </div>
+
+        <div class="legal-sections">
+          <section class="legal-card">
+            <h2 data-i18n="legalProviderTitle">
+              Information pursuant to Section 5 DDG
+            </h2>
+            <address>
+              <strong>Daniel Felizetti</strong><br />
+              <mark data-i18n="legalStreetPlaceholder"
+                >[Add street and house number]</mark
+              ><br />
+              <mark data-i18n="legalCityPlaceholder"
+                >[Add postal code] Berlin</mark
+              ><br />
+              <span data-i18n="legalCountry">Germany</span>
+            </address>
+            <p class="legal-note" data-i18n="legalPlaceholderNote">
+              Important: Replace the highlighted address placeholders with a
+              complete, serviceable postal address before publishing this page.
+            </p>
+          </section>
+
+          <section class="legal-card">
+            <h2 data-i18n="legalContactTitle">Contact</h2>
+            <p>
+              <span data-i18n="legalEmailLabel">Email</span>:
+              <a href="mailto:dfelizetti@gmx.de">dfelizetti@gmx.de</a>
+            </p>
+          </section>
+
+          <section class="legal-card">
+            <h2>
+              <span data-i18n="legalEditorialTitle"
+                >Responsible for editorial content</span
+              >
+              <small data-i18n="legalEditorialLaw"
+                >pursuant to Section 18(2) MStV</small
+              >
+            </h2>
+            <address>
+              <strong>Daniel Felizetti</strong><br />
+              <span data-i18n="legalAddressReference"
+                >Address as stated above</span
+              >
+            </address>
+          </section>
+        </div>
+      </article>
+
+      <footer>
+        <div class="logo-footer">
+          <a
+            href="./index.html"
+            aria-label="Back to homepage"
+            data-i18n-aria-label="legalHome"
+          >
+            <img src="./assets/img/logo-daniel.svg" alt="Daniel Logo" />
+          </a>
+          <a
+            class="legal-text"
+            href="./legal-notice.html"
+            aria-current="page"
+            data-i18n="legalNotice"
+            >Legal Notice</a
+          >
+        </div>
+        <div class="copyright">
+          <p class="copyright-text">© Daniel Felizetti 2026</p>
+        </div>
+        <div class="social-media-links">
+          <a
+            href="https://github.com/danigalvani"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub"
+          >
+            <img src="./assets/icons/git-default.svg" alt="GitHub Icon" />
+          </a>
+          <a href="mailto:dfelizetti@gmx.de" aria-label="Mail">
+            <img src="./assets/icons/mail-default.svg" alt="Mail Icon" />
+          </a>
+          <a
+            href="https://www.linkedin.com/feed/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+          >
+            <img
+              src="./assets/icons/linkedin-default.svg"
+              alt="LinkedIn Icon"
+            />
+          </a>
+        </div>
+      </footer>
+    </main>
+  </body>
+</html>
