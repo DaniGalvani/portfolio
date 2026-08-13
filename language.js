@@ -39,13 +39,13 @@ const translations = {
     liveTest: "Live test",
     testimonials: "Testimonials",
     testimonialSchuster:
-      "Michael really kept the team together with his great organization and clear communication. We wouldn't have got this far without his commitment.",
+      "Daniel really kept the team together with his great organization and clear communication. We wouldn't have got this far without his commitment.",
     teamPartnerSchuster: "V. Schuster - Team Partner",
     testimonialEichinger:
-      "Michi was a top team colleague at DA. His positive commitment and willingness to take on responsibility made a significant contribution to us achieving our goals.",
+      "Daniel was a top team colleague at DA. His positive commitment and willingness to take on responsibility made a significant contribution to us achieving our goals.",
     teamPartnerEichinger: "E. Eichinger - Team Partner",
     testimonialNuber:
-      "It was a great pleasure to work with Michael. He knows how to push and encourage team members to present the best work possible, always adding something to brainstorm. Regarding the well-being of group members, he was always present and available to listen and help others, with a great sense of humor as well.",
+      "It was a great pleasure to work with Daniel. He knows how to push and encourage team members to present the best work possible, always adding something to brainstorm. Regarding the well-being of group members, he was always present and available to listen and help others, with a great sense of humor as well.",
     frontendEngineerNuber: "I. Nuber - Frontend Engineer",
     chooseTestimonial: "Choose testimonial",
     previousTestimonial: "Previous testimonial",
@@ -70,7 +70,7 @@ const translations = {
     contactMessagePlaceholder: "Your message",
     contactMessageRequired: "Your message is required",
     contactPrivacy:
-      'I\'ve read the <a href="#privacy-policy">privacy policy</a> and agree to the processing of my data as outlined.',
+      'I\'ve read the <a href="./privacy-policy.html">privacy policy</a> and agree to the processing of my data as outlined.',
     contactPrivacyRequired: "Please accept the privacy policy.",
     contactSubmit: "Send message :)",
     backToTop: "Back to top",
@@ -92,6 +92,8 @@ const translations = {
     legalEditorialTitle: "Responsible for editorial content",
     legalEditorialLaw: "pursuant to Section 18(2) MStV",
     legalAddressReference: "Address as stated above",
+    privacyPolicy: "Privacy Policy",
+    privacyPageTitle: "Privacy Policy | Daniel Felizetti",
   },
   de: {
     pageTitle: "Daniel Felizetti | Frontend Entwickler",
@@ -133,13 +135,13 @@ const translations = {
     liveTest: "Live-Test",
     testimonials: "Referenzen",
     testimonialSchuster:
-      "Michael hat das Team mit seiner hervorragenden Organisation und klaren Kommunikation wirklich zusammengehalten. Ohne seinen Einsatz wären wir nicht so weit gekommen.",
+      "Daniel hat das Team mit seiner hervorragenden Organisation und klaren Kommunikation wirklich zusammengehalten. Ohne seinen Einsatz wären wir nicht so weit gekommen.",
     teamPartnerSchuster: "V. Schuster - Teampartner",
     testimonialEichinger:
-      "Michi war bei der DA ein großartiger Teamkollege. Sein positiver Einsatz und seine Bereitschaft, Verantwortung zu übernehmen, haben maßgeblich dazu beigetragen, dass wir unsere Ziele erreicht haben.",
+      "Daniel war bei der DA ein großartiger Teamkollege. Sein positiver Einsatz und seine Bereitschaft, Verantwortung zu übernehmen, haben maßgeblich dazu beigetragen, dass wir unsere Ziele erreicht haben.",
     teamPartnerEichinger: "E. Eichinger - Teampartner",
     testimonialNuber:
-      "Es war mir eine große Freude, mit Michael zusammenzuarbeiten. Er versteht es, Teammitglieder zu motivieren und zu ermutigen, ihre bestmögliche Arbeit zu präsentieren, und bringt stets neue Ideen ins Brainstorming ein. Das Wohlbefinden der Gruppenmitglieder lag ihm am Herzen; er war immer ansprechbar, hörte zu und half anderen – und das mit viel Humor.",
+      "Es war mir eine große Freude, mit Daniel zusammenzuarbeiten. Er versteht es, Teammitglieder zu motivieren und zu ermutigen, ihre bestmögliche Arbeit zu präsentieren, und bringt stets neue Ideen ins Brainstorming ein. Das Wohlbefinden der Gruppenmitglieder lag ihm am Herzen; er war immer ansprechbar, hörte zu und half anderen – und das mit viel Humor.",
     frontendEngineerNuber: "I. Nuber - Frontend-Entwickler",
     chooseTestimonial: "Referenz auswählen",
     previousTestimonial: "Vorherige Referenz",
@@ -164,7 +166,7 @@ const translations = {
     contactMessagePlaceholder: "Deine Nachricht",
     contactMessageRequired: "Deine Nachricht ist erforderlich",
     contactPrivacy:
-      'Ich habe die <a href="#privacy-policy">Datenschutzerklärung</a> gelesen und stimme der beschriebenen Verarbeitung meiner Daten zu.',
+      'Ich habe die <a href="./privacy-policy.html">Datenschutzerklärung</a> gelesen und stimme der beschriebenen Verarbeitung meiner Daten zu.',
     contactPrivacyRequired: "Bitte akzeptiere die Datenschutzerklärung.",
     contactSubmit: "Nachricht senden :)",
     backToTop: "Nach oben",
@@ -186,6 +188,8 @@ const translations = {
     legalEditorialTitle: "Redaktionell verantwortlich",
     legalEditorialLaw: "gemäß § 18 Abs. 2 MStV",
     legalAddressReference: "Anschrift wie oben",
+    privacyPolicy: "Datenschutzerklärung",
+    privacyPageTitle: "Datenschutzerklärung | Daniel Felizetti",
   },
 };
 
@@ -209,7 +213,7 @@ function storeLanguage(language) {
   }
 }
 
-function setLanguage(language) {
+function setLanguage(language, { persist = false } = {}) {
   const normalizedLanguage = language.toLowerCase();
   const selectedTranslations = translations[normalizedLanguage];
 
@@ -245,13 +249,23 @@ function setLanguage(language) {
     );
   });
 
-  storeLanguage(normalizedLanguage);
+  document.querySelectorAll("[data-language-content]").forEach((element) => {
+    const isSelectedLanguage =
+      element.dataset.languageContent === normalizedLanguage;
+
+    element.hidden = !isSelectedLanguage;
+    element.setAttribute("aria-hidden", String(!isSelectedLanguage));
+  });
+
+  if (persist) {
+    storeLanguage(normalizedLanguage);
+  }
 }
 
 languageInputs.forEach((input) => {
   input.addEventListener("change", () => {
     if (input.checked) {
-      setLanguage(input.value);
+      setLanguage(input.value, { persist: true });
     }
   });
 });

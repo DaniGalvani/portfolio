@@ -191,6 +191,7 @@
   align-items: start;
   gap: 10px;
   margin-top: 16px;
+  min-height: calc(var(--contact-error-space) + 38px);
   padding-bottom: var(--contact-error-space);
 }
 
@@ -358,6 +359,10 @@
 
   .contact-form {
     --contact-error-space: 50px;
+  }
+
+  .contact-privacy {
+    min-height: calc(var(--contact-error-space) + 76px);
   }
 
   .contact-field input,

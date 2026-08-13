@@ -11,8 +11,8 @@
     <link rel="stylesheet" href="./styles/about.css" />
     <link rel="stylesheet" href="./styles/skills.css" />
     <link rel="stylesheet" href="./styles/portfolio.css" />
-    <link rel="stylesheet" href="./styles/contact.css" />
-    <link rel="stylesheet" href="./styles/footer.css" />
+    <link rel="stylesheet" href="./styles/contact.css?v=20260813-3" />
+    <link rel="stylesheet" href="./styles/footer.css?v=20260813" />
     <script src="./language.js" defer></script>
     <script src="./script.js" defer></script>
   </head>
@@ -98,6 +98,7 @@
           <a
             href="https://github.com/danigalvani"
             target="_blank"
+            rel="noopener noreferrer"
             aria-label="GitHub"
           >
             <img src="./assets/icons/git-default.svg" alt="GitHub Icon" />
@@ -108,6 +109,7 @@
           <a
             href="https://www.linkedin.com/feed/"
             target="_blank"
+            rel="noopener noreferrer"
             aria-label="LinkedIn"
           >
             <img
@@ -235,12 +237,18 @@
               <img src="./assets/icons/scrum.svg" alt="Scrum" />
               <p>Scrum</p>
             </div>
-            <div class="skill-item skill-item--learning">
+            <div class="skill-item skill-item--learning" tabindex="0">
               <img
+                class="skill-item__icon"
                 src="./assets/icons/interest.svg"
                 alt="Continually learning"
               />
               <p data-i18n="continuallyLearning">Continually learning</p>
+              <img
+                class="skill-interest-bubble"
+                src="./assets/img/special-interest.svg"
+                alt="I have a special interest in learning React and Vue.js"
+              />
             </div>
           </div>
           <div class="skills-copy">
@@ -302,13 +310,18 @@
                 categories.
               </p>
               <div class="portfolio-actions">
-                <a class="portfolio-btn portfolio-btn--primary" href="https://join.daniel-felizetti.de" target="_blank"
+                <a
+                  class="portfolio-btn portfolio-btn--primary"
+                  href="https://join.daniel-felizetti.de"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   ><span data-i18n="liveTest">Live test</span></a
                 >
                 <a
                   class="portfolio-btn portfolio-btn--outline"
                   href="https://github.com/DaniGalvani/join_portfolio"
                   target="_blank"
+                  rel="noopener noreferrer"
                   >Github</a
                 >
               </div>
@@ -326,13 +339,18 @@
                 and inspect entries with a clean and responsive interface.
               </p>
               <div class="portfolio-actions">
-                <a class="portfolio-btn portfolio-btn--primary" href="https://pokedex.daniel-felizetti.de" target="_blank"
+                <a
+                  class="portfolio-btn portfolio-btn--primary"
+                  href="https://pokedex.daniel-felizetti.de"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   ><span data-i18n="liveTest">Live test</span></a
                 >
                 <a
                   class="portfolio-btn portfolio-btn--outline"
                   href="https://github.com/DaniGalvani/Pokedex"
                   target="_blank"
+                  rel="noopener noreferrer"
                   >Github</a
                 >
               </div>
@@ -351,13 +369,18 @@
                 and save the world.
               </p>
               <div class="portfolio-actions">
-                <a class="portfolio-btn portfolio-btn--primary" href="https://pollo-loco.daniel-felizetti.de" target="_blank"
+                <a
+                  class="portfolio-btn portfolio-btn--primary"
+                  href="https://pollo-loco.daniel-felizetti.de"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   ><span data-i18n="liveTest">Live test</span></a
                 >
                 <a
                   class="portfolio-btn portfolio-btn--outline"
                   href="https://github.com/DaniGalvani/El_Pollo_Loco"
                   target="_blank"
+                  rel="noopener noreferrer"
                   >Github</a
                 >
               </div>
@@ -382,7 +405,7 @@
                 />
                 <blockquote>
                   <p data-i18n="testimonialSchuster">
-                    Michael really kept the team together with his great
+                    Daniel really kept the team together with his great
                     organization and clear communication. We wouldn't have got
                     this far without his commitment.
                   </p>
@@ -419,7 +442,7 @@
                 />
                 <blockquote>
                   <p data-i18n="testimonialEichinger">
-                    Michi was a top team colleague at DA. His positive
+                    Daniel was a top team colleague at DA. His positive
                     commitment and willingness to take on responsibility made a
                     significant contribution to us achieving our goals.
                   </p>
@@ -456,7 +479,7 @@
                 />
                 <blockquote>
                   <p data-i18n="testimonialNuber">
-                    It was a great pleasure to work with Michael. He knows how
+                    It was a great pleasure to work with Daniel. He knows how
                     to push and encourage team members to present the best work
                     possible, always adding something to brainstorm. Regarding
                     the well-being of group members, he was always present and
@@ -674,8 +697,9 @@
                 required
               />
               <label for="contact-privacy" data-i18n-html="contactPrivacy">
-                I've read the <a href="#privacy-policy">privacy policy</a> and
-                agree to the processing of my data as outlined.
+                I've read the
+                <a href="./privacy-policy.html">privacy policy</a> and agree to
+                the processing of my data as outlined.
               </label>
               <p
                 class="contact-error contact-privacy-error"
@@ -726,6 +750,7 @@
           <a
             href="https://github.com/danigalvani"
             target="_blank"
+            rel="noopener noreferrer"
             aria-label="GitHub"
           >
             <img src="./assets/icons/git-default.svg" alt="GitHub Icon" />
@@ -736,6 +761,7 @@
           <a
             href="https://www.linkedin.com/feed/"
             target="_blank"
+            rel="noopener noreferrer"
             aria-label="LinkedIn"
           >
             <img
