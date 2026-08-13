@@ -190,8 +190,8 @@
 .skills-background {
     position: absolute;
     top: clamp(60px, 10.4vw, 120px);
-    left: 0;
-    width: clamp(180px, 22.6vw, 325px);
+    left: clamp(-573px, -39.8815vw, -317.354px);
+    width: min(62.4406vw, 898px);
     height: auto;
     z-index: 1;
     pointer-events: none;
