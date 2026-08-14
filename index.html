@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="./styles/portfolio.css" />
     <link rel="stylesheet" href="./styles/contact.css?v=20260813-3" />
     <link rel="stylesheet" href="./styles/footer.css?v=20260813" />
+    <link rel="stylesheet" href="./styles/responsive.css?v=20260814" />
     <script src="./language.js" defer></script>
     <script src="./script.js" defer></script>
   </head>
@@ -24,19 +25,27 @@
             ><img src="./assets/img/logo-daniel.svg" alt="Daniel Logo"
           /></a>
         </div>
-        <nav class="navbar">
+        <nav class="navbar" id="primary-navigation" data-primary-navigation>
           <ul>
             <li>
               <a class="nav-link" href="#aboutMe" data-i18n="navAbout"
                 >About me</a
               >
             </li>
-            <li>
+            <li class="nav-item--desktop">
               <a class="nav-link" href="#skills" data-i18n="navSkills"
                 >Skills</a
               >
             </li>
+            <li class="nav-item--mobile">
+              <a class="nav-link" href="#skills" data-i18n="skillsTitle"
+                >My skills</a
+              >
+            </li>
             <li><a class="nav-link" href="#portfolio">Portfolio</a></li>
+            <li class="nav-item--mobile">
+              <a class="nav-link" href="#contact">Contact</a>
+            </li>
           </ul>
           <div
             class="language-btn"
@@ -55,6 +64,18 @@
             <label for="btn-en">EN</label>
           </div>
         </nav>
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-label="Open navigation"
+          aria-expanded="false"
+          aria-controls="primary-navigation"
+          data-nav-toggle
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </header>
       <section class="hero-section">
         <div class="hero">

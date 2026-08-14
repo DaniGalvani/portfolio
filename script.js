@@ -22,6 +22,50 @@ window.addEventListener("hashchange", () => {
 
 setActiveNavLink(window.location.hash);
 
+const navigationToggle = document.querySelector("[data-nav-toggle]");
+const primaryNavigation = document.querySelector("[data-primary-navigation]");
+
+if (navigationToggle && primaryNavigation) {
+  const mobileNavigationQuery = window.matchMedia("(max-width: 700px)");
+
+  function closeMobileNavigation() {
+    navigationToggle.setAttribute("aria-expanded", "false");
+    navigationToggle.setAttribute("aria-label", "Open navigation");
+    primaryNavigation.classList.remove("is-open");
+    document.body.classList.remove("menu-open");
+  }
+
+  navigationToggle.addEventListener("click", () => {
+    const shouldOpen =
+      navigationToggle.getAttribute("aria-expanded") !== "true";
+
+    navigationToggle.setAttribute("aria-expanded", String(shouldOpen));
+    navigationToggle.setAttribute(
+      "aria-label",
+      shouldOpen ? "Close navigation" : "Open navigation",
+    );
+    primaryNavigation.classList.toggle("is-open", shouldOpen);
+    document.body.classList.toggle("menu-open", shouldOpen);
+  });
+
+  navLinks.forEach((link) => {
+    link.addEventListener("click", closeMobileNavigation);
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      closeMobileNavigation();
+      navigationToggle.focus();
+    }
+  });
+
+  mobileNavigationQuery.addEventListener("change", (event) => {
+    if (!event.matches) {
+      closeMobileNavigation();
+    }
+  });
+}
+
 const testimonialSlider = document.querySelector(".testimonial-slider");
 
 if (testimonialSlider) {
