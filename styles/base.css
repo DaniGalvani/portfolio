@@ -111,8 +111,7 @@ body {
 
 @supports (overflow: clip) {
   html,
-  body,
-  .container {
+  body {
     overflow-x: clip;
   }
 }
