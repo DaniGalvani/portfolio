@@ -122,6 +122,10 @@
   margin-right: clamp(8px, 3vw, 30px);
 }
 
+html[lang="de"] .hero-text .greeting {
+  font-size: clamp(16px, 3vw, 44px);
+}
+
 .contact-btn {
   position: relative;
   isolation: isolate;

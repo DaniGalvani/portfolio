@@ -256,6 +256,14 @@
     line-height: 1;
   }
 
+  html[lang="de"] .hero-text .greeting {
+    font-size: 19px;
+  }
+
+  html[lang="de"] .hero-text .greeting-wrapper {
+    min-height: 64px;
+  }
+
   .hero-text .name {
     font-size: clamp(31px, 9vw, 38px);
   }
@@ -272,11 +280,13 @@
   }
 
   .hero-section .social-media {
+    --mobile-social-gap: clamp(24px, 7vw, 32px);
+
     right: 0;
     left: 0;
     width: 100%;
     height: 34px;
-    gap: clamp(24px, 7vw, 32px);
+    gap: var(--mobile-social-gap);
   }
 
   .hero-section .social-media::before {
@@ -286,6 +296,23 @@
   .hero-section .social-media > img:first-child {
     flex-basis: clamp(72px, 24vw, 104px);
     width: clamp(72px, 24vw, 104px);
+  }
+
+  .hero-section .social-media a:first-of-type {
+    position: relative;
+  }
+
+  .hero-section .social-media a:first-of-type::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: calc(100% + var(--mobile-social-gap));
+    width: 100vw;
+    height: 4px;
+    border-radius: 0 2px 2px 0;
+    background-color: var(--secondary-color);
+    pointer-events: none;
+    transform: translateY(-50%);
   }
 
   .hero-section .social-media p,
@@ -708,6 +735,14 @@
 }
 
 @media (max-width: 380px) {
+  html[lang="de"] .hero-text .greeting {
+    font-size: 16px;
+  }
+
+  html[lang="de"] .hero-text .greeting-wrapper {
+    min-height: 54px;
+  }
+
   header {
     padding-inline: 18px;
   }
