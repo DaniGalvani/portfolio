@@ -412,3 +412,15 @@
     transition: none;
   }
 }
+.contact-status {
+  margin: 0;
+  text-align: center;
+}
+
+.contact-status.is-success {
+  color: #70e61c;
+}
+
+.contact-status.is-error {
+  color: #e61c40;
+}

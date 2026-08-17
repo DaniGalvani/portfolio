@@ -611,9 +611,8 @@
 
           <form
             class="contact-form"
-            action="mailto:dfelizetti@gmx.de"
+            action="./contact.form.mail.php"
             method="post"
-            enctype="text/plain"
             novalidate
             data-contact-form
           >
@@ -742,6 +741,13 @@
             >
               <span data-i18n="contactSubmit">Send message :)</span>
             </button>
+            <p
+              class="contact-status"
+              role="status"
+              aria-live="polite"
+              data-contact-status
+              hidden
+            ></p>
           </form>
         </div>
 

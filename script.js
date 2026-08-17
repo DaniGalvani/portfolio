@@ -141,10 +141,38 @@ if (contactForm) {
   const contactSubmitButton = contactForm.querySelector(
     "[data-contact-submit]",
   );
+  const contactStatus = contactForm.querySelector("[data-contact-status]");
   const requiredContactFields = Array.from(
     contactForm.querySelectorAll("input[required], textarea[required]"),
   );
   const touchedContactFields = new Set();
+  let isSubmitting = false;
+
+  function getContactMessage(type) {
+    const messages = {
+      en: {
+        sending: "Your message is being sent...",
+        success: "Thank you! Your message has been sent.",
+        error: "The message could not be sent. Please try again later.",
+      },
+      de: {
+        sending: "Deine Nachricht wird gesendet...",
+        success: "Vielen Dank! Deine Nachricht wurde gesendet.",
+        error:
+          "Die Nachricht konnte nicht gesendet werden. Bitte versuche es später erneut.",
+      },
+    };
+    const language = document.documentElement.lang.toLowerCase();
+
+    return (messages[language] ?? messages.en)[type];
+  }
+
+  function setContactStatus(type = "") {
+    contactStatus.hidden = !type;
+    contactStatus.classList.toggle("is-success", type === "success");
+    contactStatus.classList.toggle("is-error", type === "error");
+    contactStatus.textContent = type ? getContactMessage(type) : "";
+  }
 
   function getContactFieldError(field) {
     if (field.type === "checkbox") {
@@ -197,8 +225,10 @@ if (contactForm) {
       (field) => getContactFieldError(field) === null,
     );
 
-    contactSubmitButton.disabled = !isComplete;
-    contactSubmitButton.setAttribute("aria-disabled", String(!isComplete));
+    const isDisabled = !isComplete || isSubmitting;
+
+    contactSubmitButton.disabled = isDisabled;
+    contactSubmitButton.setAttribute("aria-disabled", String(isDisabled));
   }
 
   requiredContactFields.forEach((field) => {
@@ -218,24 +248,65 @@ if (contactForm) {
     });
   });
 
-  contactForm.addEventListener("submit", (event) => {
+  contactForm.addEventListener("submit", async (event) => {
+    event.preventDefault();
+
     const invalidFields = requiredContactFields.filter(
       (field) => getContactFieldError(field) !== null,
     );
 
-    if (invalidFields.length === 0) {
+    if (invalidFields.length > 0) {
+      invalidFields.forEach((field) => {
+        touchedContactFields.add(field);
+        updateContactFieldState(field, true);
+      });
+
+      invalidFields[0].focus();
+      updateContactSubmitState();
       return;
     }
 
-    event.preventDefault();
+    if (isSubmitting) {
+      return;
+    }
 
-    invalidFields.forEach((field) => {
-      touchedContactFields.add(field);
-      updateContactFieldState(field, true);
-    });
+    const formData = new FormData(contactForm);
+    const payload = {
+      name: String(formData.get("name") ?? "").trim(),
+      email: String(formData.get("email") ?? "").trim(),
+      message: String(formData.get("message") ?? "").trim(),
+    };
 
-    invalidFields[0].focus();
+    isSubmitting = true;
     updateContactSubmitState();
+    contactForm.setAttribute("aria-busy", "true");
+    setContactStatus("sending");
+
+    try {
+      const response = await fetch(contactForm.action, {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
+      const result = await response.json();
+
+      if (!response.ok || result.success !== true) {
+        throw new Error(result.error || "Mail delivery failed");
+      }
+
+      contactForm.reset();
+      setContactStatus("success");
+    } catch (error) {
+      console.error("Contact form submission failed:", error);
+      setContactStatus("error");
+    } finally {
+      isSubmitting = false;
+      contactForm.removeAttribute("aria-busy");
+      updateContactSubmitState();
+    }
   });
 
   contactForm.addEventListener("reset", () => {
