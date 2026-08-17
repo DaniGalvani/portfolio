@@ -272,6 +272,7 @@ if (contactForm) {
 
     const formData = new FormData(contactForm);
     const payload = {
+      privacyAccepted: formData.has("privacy-policy-accepted"),
       name: String(formData.get("name") ?? "").trim(),
       email: String(formData.get("email") ?? "").trim(),
       message: String(formData.get("message") ?? "").trim(),
