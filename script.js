@@ -1,4 +1,5 @@
 const navLinks = document.querySelectorAll(".navbar .nav-link");
+const pageSectionLinks = document.querySelectorAll('a[href^="#"]');
 
 function setActiveNavLink(hash) {
   navLinks.forEach((link) => {
@@ -10,17 +11,38 @@ function setActiveNavLink(hash) {
   });
 }
 
-navLinks.forEach((link) => {
-  link.addEventListener("click", () => {
-    setActiveNavLink(link.getAttribute("href"));
+function removeAddressBarHash() {
+  const cleanUrl = `${window.location.pathname}${window.location.search}`;
+  window.history.replaceState(window.history.state, "", cleanUrl);
+}
+
+pageSectionLinks.forEach((link) => {
+  link.addEventListener("click", (event) => {
+    const hash = link.getAttribute("href");
+    const target = document.getElementById(hash.slice(1));
+
+    if (!target) {
+      return;
+    }
+
+    event.preventDefault();
+    target.scrollIntoView({ block: "start" });
+    setActiveNavLink(hash);
+    removeAddressBarHash();
   });
 });
 
-window.addEventListener("hashchange", () => {
-  setActiveNavLink(window.location.hash);
-});
+const initialHash = window.location.hash;
+setActiveNavLink(initialHash);
 
-setActiveNavLink(window.location.hash);
+if (initialHash) {
+  const initialTarget = document.getElementById(initialHash.slice(1));
+
+  window.requestAnimationFrame(() => {
+    initialTarget?.scrollIntoView({ block: "start" });
+    removeAddressBarHash();
+  });
+}
 
 const navigationToggle = document.querySelector("[data-nav-toggle]");
 const primaryNavigation = document.querySelector("[data-primary-navigation]");
@@ -147,6 +169,7 @@ if (contactForm) {
   );
   const touchedContactFields = new Set();
   let isSubmitting = false;
+  let contactStatusTimeoutId = null;
 
   function getContactMessage(type) {
     const messages = {
@@ -168,10 +191,22 @@ if (contactForm) {
   }
 
   function setContactStatus(type = "") {
+    if (contactStatusTimeoutId !== null) {
+      window.clearTimeout(contactStatusTimeoutId);
+      contactStatusTimeoutId = null;
+    }
+
     contactStatus.hidden = !type;
     contactStatus.classList.toggle("is-success", type === "success");
     contactStatus.classList.toggle("is-error", type === "error");
     contactStatus.textContent = type ? getContactMessage(type) : "";
+
+    if (type === "success") {
+      contactStatusTimeoutId = window.setTimeout(() => {
+        contactStatusTimeoutId = null;
+        setContactStatus();
+      }, 5000);
+    }
   }
 
   function getContactFieldError(field) {

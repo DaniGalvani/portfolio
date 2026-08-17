@@ -13,6 +13,7 @@
     --about-content-padding: 24px;
     --skills-title-edge: 24px;
     --skills-line-overhang: 0px;
+    --viewport-edge-overscan: 0px;
   }
 
   .section-title {
@@ -25,7 +26,16 @@
   }
 
   header {
+    width: 100%;
+    max-width: 100%;
     padding-inline: 18px;
+  }
+
+  header::before {
+    right: 0;
+    left: 0;
+    width: auto;
+    transform: none;
   }
 
   .logo {
@@ -70,7 +80,8 @@
     top: var(--header-height);
     right: 0;
     left: 0;
-    width: 100vw;
+    width: auto;
+    max-width: 100%;
     height: calc(100dvh - var(--header-height));
     margin: 0;
     padding: 124px 24px 40px;
@@ -173,6 +184,9 @@
 
   .hero-section {
     --hero-bottom-offset: 30px;
+    --mobile-profile-top: 40px;
+    --mobile-profile-height: min(126vw, 500px);
+    --mobile-curve-overlap: 230px;
 
     min-height: 920px;
     padding-top: var(--header-height);
@@ -186,10 +200,10 @@
   }
 
   .profile-image {
-    top: 40px;
+    top: var(--mobile-profile-top);
     left: 50%;
     width: auto;
-    height: min(126vw, 500px);
+    height: var(--mobile-profile-height);
     transform: translateX(-50%);
   }
 
@@ -204,7 +218,10 @@
   }
 
   .hero-background {
-    top: 370px;
+    top: calc(
+      var(--mobile-profile-top) + var(--mobile-profile-height) -
+        var(--mobile-curve-overlap)
+    );
     left: 50%;
     width: 760px;
     min-width: 760px;
@@ -217,17 +234,20 @@
     top: 630px;
     left: 0;
     width: 100%;
+    max-width: 100%;
     height: auto;
     padding: 0 16px;
     align-items: center;
   }
 
   .headline-row {
-    align-items: center;
+    max-width: 100%;
+    align-items: stretch;
   }
 
   .hero-text .greeting-wrapper {
     width: 30px;
+    flex: 0 0 30px;
   }
 
   .hero-text .greeting {
@@ -693,11 +713,11 @@
   }
 
   .hero-text .name {
-    font-size: 29px;
+    font-size: clamp(25px, 9vw, 29px);
   }
 
   .hero-text .title {
-    font-size: 19px;
+    font-size: clamp(16px, 5.9vw, 19px);
   }
 
   .skills-grid {
