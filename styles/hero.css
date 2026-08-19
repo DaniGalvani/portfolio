@@ -55,7 +55,11 @@
 
 .hero-background {
   position: absolute;
-  top: clamp(160px, 17.35vw, 250px);
+  top: clamp(
+    100px,
+    min(17.35vw, calc(32vw - 123px)),
+    250px
+  );
   left: calc(-1 * var(--content-outer-gutter));
   width: 100vw;
   min-width: 100%;
