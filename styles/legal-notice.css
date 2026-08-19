@@ -237,38 +237,12 @@
 }
 
 @media (max-width: 700px) {
-  .legal-page .navbar ul {
-    display: none;
-  }
-
   .legal-page .navbar {
     width: auto;
   }
 
   .legal-page .language-btn {
     margin-left: 0;
-  }
-
-  .legal-page footer {
-    flex-direction: column;
-    justify-content: center;
-    height: auto;
-    min-height: 310px;
-    padding: 52px 24px 42px;
-    gap: 30px;
-  }
-
-  .legal-page .logo-footer {
-    align-items: center;
-    margin-left: 0;
-  }
-
-  .legal-page .copyright {
-    order: 3;
-  }
-
-  .legal-page .social-media-links {
-    margin-right: 0;
   }
 }
 
