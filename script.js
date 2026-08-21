@@ -163,6 +163,9 @@ if (contactForm) {
   const contactSubmitButton = contactForm.querySelector(
     "[data-contact-submit]",
   );
+  const contactSubmitWrapper = contactForm.querySelector(
+    "[data-contact-submit-wrapper]",
+  );
   const contactStatus = contactForm.querySelector("[data-contact-status]");
   const requiredContactFields = Array.from(
     contactForm.querySelectorAll("input[required], textarea[required]"),
@@ -259,12 +262,34 @@ if (contactForm) {
     const isComplete = requiredContactFields.every(
       (field) => getContactFieldError(field) === null,
     );
-
     const isDisabled = !isComplete || isSubmitting;
 
     contactSubmitButton.disabled = isDisabled;
     contactSubmitButton.setAttribute("aria-disabled", String(isDisabled));
   }
+
+  function showContactValidationErrors() {
+    const invalidFields = requiredContactFields.filter(
+      (field) => getContactFieldError(field) !== null,
+    );
+
+    invalidFields.forEach((field) => {
+      touchedContactFields.add(field);
+      updateContactFieldState(field, true);
+    });
+
+    if (invalidFields.length > 0) {
+      invalidFields[0].focus();
+    }
+
+    return invalidFields;
+  }
+
+  contactSubmitWrapper.addEventListener("click", () => {
+    if (contactSubmitButton.disabled && !isSubmitting) {
+      showContactValidationErrors();
+    }
+  });
 
   requiredContactFields.forEach((field) => {
     field.addEventListener("blur", () => {
@@ -286,17 +311,9 @@ if (contactForm) {
   contactForm.addEventListener("submit", async (event) => {
     event.preventDefault();
 
-    const invalidFields = requiredContactFields.filter(
-      (field) => getContactFieldError(field) !== null,
-    );
+    const invalidFields = showContactValidationErrors();
 
     if (invalidFields.length > 0) {
-      invalidFields.forEach((field) => {
-        touchedContactFields.add(field);
-        updateContactFieldState(field, true);
-      });
-
-      invalidFields[0].focus();
       updateContactSubmitState();
       return;
     }
