@@ -44,6 +44,112 @@ if (initialHash) {
   });
 }
 
+function initializeMotionEffects() {
+  const reducedMotionQuery = window.matchMedia(
+    "(prefers-reduced-motion: reduce)",
+  );
+
+  if (reducedMotionQuery.matches) {
+    return;
+  }
+
+  document.documentElement.classList.add("motion-enabled", "motion-preparing");
+
+  const revealGroups = [
+    [
+      ".aboutMe-content > .section-title",
+      ".aboutMe-text",
+      ".location-text",
+      ".bulb-text",
+      ".puzzle-text",
+    ],
+    [
+      ".skills-heading",
+      ".skills-intro",
+      ".skills-grid",
+      ".skills-copy h3",
+      ".skills-learning-text",
+      ".skills-contact-btn",
+    ],
+    [
+      ".portfolio-glow",
+      ".portfolio-intro",
+      ".portfolio-project",
+      ".testimonial-slider",
+    ],
+    [".contact-heading", ".contact-copy", ".contact-form"],
+  ];
+  const revealElements = [];
+
+  revealGroups.forEach((selectors) => {
+    const groupElements = selectors.flatMap((selector) =>
+      Array.from(document.querySelectorAll(selector)),
+    );
+
+    groupElements.forEach((element, index) => {
+      element.classList.add("motion-reveal");
+      element.style.setProperty(
+        "--motion-delay",
+        `${Math.min(index, 3) * 100}ms`,
+      );
+      revealElements.push(element);
+    });
+  });
+
+  const lineTargets = [
+    [".line-green", ".profile-img", "motion-line--from-right"],
+    [
+      ".skills-heading",
+      ".skills-heading",
+      "motion-line-host--from-right",
+    ],
+    [".portfolio-line-6", ".portfolio-glow", "motion-line--from-left"],
+    [".portfolio-line-4", ".portfolio-glow", "motion-line--from-right"],
+    [".contact-heading-line", ".contact-heading", "motion-line--from-left"],
+  ];
+  const lineElements = [];
+
+  lineTargets.forEach(([lineSelector, triggerSelector, directionClass]) => {
+    const element = document.querySelector(lineSelector);
+    const trigger = document.querySelector(triggerSelector);
+
+    if (!element || !trigger) {
+      return;
+    }
+
+    element.classList.add(directionClass);
+    lineElements.push(trigger);
+  });
+
+  void document.documentElement.offsetWidth;
+  document.documentElement.classList.remove("motion-preparing");
+
+  if (!("IntersectionObserver" in window)) {
+    revealElements.forEach((element) => element.classList.add("is-visible"));
+    lineElements.forEach((element) => element.classList.add("is-line-drawn"));
+    return;
+  }
+
+  const motionObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        entry.target.classList.toggle("is-visible", entry.isIntersecting);
+        entry.target.classList.toggle("is-line-drawn", entry.isIntersecting);
+      });
+    },
+    {
+      rootMargin: "0px 0px -8%",
+      threshold: 0.12,
+    },
+  );
+
+  new Set([...revealElements, ...lineElements]).forEach((element) => {
+    motionObserver.observe(element);
+  });
+}
+
+initializeMotionEffects();
+
 const navigationToggle = document.querySelector("[data-nav-toggle]");
 const primaryNavigation = document.querySelector("[data-primary-navigation]");
 
