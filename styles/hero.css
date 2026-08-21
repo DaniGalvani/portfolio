@@ -1,9 +1,9 @@
 .hero-section {
-  --hero-bottom-offset: clamp(34px, 6.9vw, 100px);
+  --hero-bottom-offset: clamp(10px, 3vw, 42px);
 
   position: relative;
   width: 100%;
-  min-height: clamp(500px, 72vw, 1030px);
+  height: 100vh;
   padding-top: clamp(74px, 7.36vw, 106px);
   display: flex;
   align-items: flex-start;
@@ -229,6 +229,8 @@
   flex: 0 0 102px;
   width: 102px;
   height: 4px;
+  border-radius: 0 999px 999px 0;
+  background-color: var(--secondary-color);
 }
 
 .hero-section .scroll-indicator {

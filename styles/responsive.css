@@ -188,7 +188,7 @@
     --mobile-profile-height: min(126vw, 500px);
     --mobile-curve-overlap: 230px;
 
-    min-height: 920px;
+    min-height: 0;
     padding-top: var(--header-height);
     display: block;
     overflow: hidden;
@@ -272,11 +272,13 @@
   }
 
   .hero-section .social-media {
+    --mobile-social-gap: clamp(24px, 7vw, 32px);
+
     right: 0;
     left: 0;
     width: 100%;
     height: 34px;
-    gap: clamp(24px, 7vw, 32px);
+    gap: var(--mobile-social-gap);
   }
 
   .hero-section .social-media::before {
@@ -284,8 +286,18 @@
   }
 
   .hero-section .social-media > img:first-child {
-    flex-basis: clamp(72px, 24vw, 104px);
-    width: clamp(72px, 24vw, 104px);
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: max(
+      0px,
+      calc(
+        50% - 45px - var(--mobile-social-gap) -
+          var(--mobile-social-gap)
+      )
+    );
+    height: 4px;
+    transform: translateY(-50%);
   }
 
   .hero-section .social-media p,

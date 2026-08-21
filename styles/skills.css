@@ -45,7 +45,6 @@
     max-width: 60px;
     max-height: 60px;
     object-fit: contain;
-    cursor: pointer;
 }
 
 .skill-item:hover > img:not(.skill-interest-bubble):not(.skill-item__icon) {
