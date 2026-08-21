@@ -16,8 +16,10 @@
     <link rel="stylesheet" href="./styles/base.css" />
     <link rel="stylesheet" href="./styles/header.css" />
     <link rel="stylesheet" href="./styles/footer.css?v=20260813" />
+    <link rel="stylesheet" href="./styles/responsive.css?v=20260814" />
     <link rel="stylesheet" href="./styles/legal-notice.css" />
     <script src="./language.js" defer></script>
+    <script src="./script.js" defer></script>
   </head>
   <body>
     <main id="top" class="container legal-page">
@@ -31,8 +33,12 @@
             <img src="./assets/img/logo-daniel.svg" alt="Daniel Logo" />
           </a>
         </div>
-
-        <nav class="navbar" aria-label="Main navigation">
+        <nav
+          class="navbar"
+          id="primary-navigation"
+          aria-label="Main navigation"
+          data-primary-navigation
+        >
           <ul>
             <li>
               <a
@@ -42,7 +48,7 @@
                 >About me</a
               >
             </li>
-            <li>
+            <li class="nav-item--desktop">
               <a
                 class="nav-link"
                 href="./index.html#skills"
@@ -50,11 +56,21 @@
                 >Skills</a
               >
             </li>
+            <li class="nav-item--mobile">
+              <a
+                class="nav-link"
+                href="./index.html#skills"
+                data-i18n="skillsTitle"
+                >My skills</a
+              >
+            </li>
             <li>
               <a class="nav-link" href="./index.html#portfolio">Portfolio</a>
             </li>
+            <li class="nav-item--mobile">
+              <a class="nav-link" href="./index.html#contact">Contact</a>
+            </li>
           </ul>
-
           <div
             class="language-btn"
             aria-label="Language selection"
@@ -72,14 +88,24 @@
             <label for="btn-en">EN</label>
           </div>
         </nav>
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-label="Open navigation"
+          aria-expanded="false"
+          aria-controls="primary-navigation"
+          data-nav-toggle
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </header>
-
       <article class="legal-content" aria-labelledby="legal-heading">
         <a class="legal-back-link" href="./index.html">
           <span aria-hidden="true">←</span>
           <span data-i18n="legalHome">Back to homepage</span>
         </a>
-
         <div class="legal-heading-block">
           <p class="legal-eyebrow" data-i18n="legalEyebrow">
             Legal information
@@ -90,7 +116,6 @@
             German law.
           </p>
         </div>
-
         <div class="legal-sections">
           <section class="legal-card">
             <h2 data-i18n="legalProviderTitle">
@@ -106,12 +131,7 @@
               ><br />
               <span data-i18n="legalCountry">Germany</span>
             </address>
-            <p class="legal-note" data-i18n="legalPlaceholderNote">
-              Important: Replace the highlighted address placeholders with a
-              complete, serviceable postal address before publishing this page.
-            </p>
           </section>
-
           <section class="legal-card">
             <h2 data-i18n="legalContactTitle">Contact</h2>
             <p>
@@ -119,7 +139,6 @@
               <a href="mailto:dfelizetti@gmx.de">dfelizetti@gmx.de</a>
             </p>
           </section>
-
           <section class="legal-card">
             <h2>
               <span data-i18n="legalEditorialTitle"
@@ -138,7 +157,6 @@
           </section>
         </div>
       </article>
-
       <footer>
         <div class="logo-footer">
           <a

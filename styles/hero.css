@@ -55,7 +55,11 @@
 
 .hero-background {
   position: absolute;
-  top: clamp(160px, 17.35vw, 250px);
+  top: clamp(
+    100px,
+    min(17.35vw, calc(32vw - 123px)),
+    250px
+  );
   left: calc(-1 * var(--content-outer-gutter));
   width: 100vw;
   min-width: 100%;
@@ -120,6 +124,10 @@
   white-space: nowrap;
   transform: rotate(-90deg);
   margin-right: clamp(8px, 3vw, 30px);
+}
+
+html[lang="de"] .hero-text .greeting {
+  font-size: clamp(16px, 3vw, 44px);
 }
 
 .contact-btn {
