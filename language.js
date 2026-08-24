@@ -32,8 +32,6 @@ const translations = {
       "Explore a selection of my work here - Interact with projects to see my skills in Action.",
     joinDescription:
       "Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.",
-    pokedexDescription:
-      "A small web application based on a public API. Browse, search and inspect entries with a clean and responsive interface.",
     polloDescription:
       "A simple jump-and-run game based on an object-oriented approach. Help Pepe find coins and bottles to fight the evil chicken and save the world.",
     liveTest: "Live test",
@@ -128,8 +126,6 @@ const translations = {
       "Entdecke hier eine Auswahl meiner Arbeiten und interagiere mit den Projekten, um meine Fähigkeiten in Aktion zu sehen.",
     joinDescription:
       "Ein vom Kanban-System inspirierter Task-Manager. Erstelle und organisiere Aufgaben per Drag-and-drop und weise ihnen Benutzer und Kategorien zu.",
-    pokedexDescription:
-      "Eine kleine Webanwendung auf Basis einer öffentlichen API. Durchsuche und erkunde Einträge in einer übersichtlichen und responsiven Oberfläche.",
     polloDescription:
       "Ein kleines Jump-and-Run-Spiel auf Basis eines objektorientierten Ansatzes. Hilf Pepe, Münzen und Flaschen zu finden, das böse Huhn zu besiegen und die Welt zu retten.",
     liveTest: "Live-Test",

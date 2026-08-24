@@ -29,7 +29,6 @@ Das Projekt verwendet keinen Paketmanager, kein Framework und keinen Build-Proze
 | Projekt | Technologien | Live-Demo | Quellcode |
 | --- | --- | --- | --- |
 | Join | HTML, CSS, JavaScript, Firebase | [join.daniel-felizetti.de](https://join.daniel-felizetti.de) | [DaniGalvani/join_portfolio](https://github.com/DaniGalvani/join_portfolio) |
-| Pokédex | JavaScript, HTML, CSS, REST API | [pokedex.daniel-felizetti.de](https://pokedex.daniel-felizetti.de) | [DaniGalvani/Pokedex](https://github.com/DaniGalvani/Pokedex) |
 | Pollo Loco | HTML, CSS, JavaScript | [pollo-loco.daniel-felizetti.de](https://pollo-loco.daniel-felizetti.de) | [DaniGalvani/El_Pollo_Loco](https://github.com/DaniGalvani/El_Pollo_Loco) |
 
 ## Projektstruktur
