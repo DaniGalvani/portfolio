@@ -183,25 +183,22 @@
   }
 
   .hero-section {
-    --hero-bottom-offset: 30px;
-    --mobile-profile-top: 40px;
-    --mobile-profile-height: min(126vw, 500px);
-    --mobile-curve-overlap: 230px;
-    --mobile-content-gap: 32px;
+    --hero-bottom-offset: max(18px, env(safe-area-inset-bottom));
+    --mobile-profile-top: clamp(8px, 2vh, 18px);
+    --mobile-profile-height: clamp(285px, min(112vw, 52vh), 450px);
+    --mobile-curve-overlap: clamp(195px, calc(64vw - 20px), 265px);
+    --mobile-content-gap: clamp(2px, 1vh, 10px);
 
-    height: auto;
-    min-height: 100vh;
+    height: 100vh;
+    min-height: 0;
     padding-top: var(--header-height);
-    padding-bottom: var(--hero-bottom-offset);
-    display: flex;
-    flex-direction: column;
+    display: block;
     overflow: hidden;
   }
 
   .hero {
-    flex: 0 0 545px;
     width: 100%;
-    height: 545px;
+    height: 100%;
   }
 
   .profile-image {
@@ -213,9 +210,9 @@
   }
 
   .photo-shadows {
-    top: 16px;
+    top: 8px;
     left: 50%;
-    width: 520px;
+    width: min(132vw, 500px);
     max-width: none;
     transform: translateX(-50%);
     -webkit-mask-image: none;
@@ -228,22 +225,22 @@
         var(--mobile-curve-overlap)
     );
     left: 50%;
-    width: 760px;
-    min-width: 760px;
-    height: 570px;
+    width: clamp(660px, max(190vw, 90vh), 900px);
+    min-width: 660px;
+    height: auto;
     transform: translateX(-50%);
   }
 
   .hero-content {
-    position: relative;
-    top: auto;
-    left: auto;
-    flex: 0 0 auto;
+    position: absolute;
+    top: calc(
+      var(--header-height) + var(--mobile-profile-top) +
+        var(--mobile-profile-height) + var(--mobile-content-gap)
+    );
+    left: 0;
     width: 100%;
     max-width: 100%;
     height: auto;
-    margin-top: 5px;
-    margin-bottom: var(--mobile-content-gap);
     padding: 0 16px;
     align-items: center;
   }
@@ -282,22 +279,18 @@
 
   .contact-btn {
     width: 148px;
-    height: 55px;
-    margin-top: 36px;
+    height: 52px;
+    margin-top: clamp(14px, 2.5vh, 26px);
     font-size: 18px;
   }
 
   .hero-section .social-media {
     --mobile-social-gap: clamp(24px, 7vw, 32px);
 
-    position: relative;
-    right: auto;
-    bottom: auto;
-    left: auto;
-    flex: 0 0 34px;
+    right: 0;
+    left: 0;
     width: 100%;
     height: 34px;
-    margin-top: auto;
     gap: var(--mobile-social-gap);
   }
 
